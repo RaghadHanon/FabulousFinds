@@ -1,16 +1,10 @@
-
-
-
-.card {
+/*.card {
   background-color: var(--color1);
 
 }
-
-
 .cardImage {
   width: 70%;
 }
-
 .frame {
   width: 163px;
   height: 163px;
@@ -19,14 +13,11 @@
 
   transition: all 2s ease-out;
 }
-
 .card:hover .frame {
   background-color: var(--color4);
   transform: rotatey(360deg);
   transition: all 2s ease-in-out;
 }
-
-
 
 .circle {
   background-color: var(--color4);
@@ -51,11 +42,53 @@
   transition: all 0.3s ease-out;
 }
 
+*/
 
+.card {
+  background-color: var(--color1);
+}
 
-@media screen and (max-width:450px) {
- 
+.cardImage {
+  width: 70%;
+}
 
+.frame {
+  width: 163px;
+  height: 163px;
+  border-radius: 50%;
+  border: 2px solid var(--color4);
+  transition: all 2s ease-out;
+  transform: rotateY(0deg); /* Set initial rotation angle */
+}
+
+.card:hover .frame {
+  background-color: var(--color4);
+  transform: rotateY(360deg); /* Apply rotation only on hover */
+  transition: all 2s ease-in-out;
+}
+
+.circle {
+  background-color: var(--color4);
+  width: 143px;
+  height: 143px;
+  border-radius: 50%;
+  bottom: 3%;
+  right: 3%;
+  transition: all 2s ease-out;
+}
+
+.card:hover .circle {
+  background-color: var(--color1);
+}
+
+.titleStyle {
+  color: var(--color4);
+  font-size: 23px;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+@media screen and (max-width: 450px) {
   .cardImage {
     width: 60%;
   }

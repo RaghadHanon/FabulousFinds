@@ -9,8 +9,8 @@ function NavBar() {
       <div className={`container-fluid container`}>
         <NavLink to="/"><img src={logo} className={style.NavLogo} /></NavLink>
 
-        <button className= {`navbar-toggler ${style.navbarToggler}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i className="fa-solid fa-bars" style={{color: "#fed9ed",}}></i>
+        <button className={`navbar-toggler ${style.navbarToggler}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i className="fa-solid fa-bars" style={{ color: "#fed9ed", }}></i>
         </button>
         <div className="collapse navbar-collapse m-2" id="navbarNav">
           <ul className="navbar-nav flex-grow-1 gap-2">

@@ -1,111 +1,101 @@
-
-.svgStyle{
+.svgStyle {
   margin-top: 8%;
 }
-.titleStyle{
+.titleStyle {
   font-size: 90px;
   text-align: center;
 }
-.spanStyle{
+.spanStyle {
   font-size: 50px;
   text-align: center;
 }
-.pStyle{
+.pStyle {
   padding: 30px 0px;
   font-size: 25px;
 }
-.introTxt{
-  padding:  100px 50px 0 0;
+.introTxt {
+  padding: 100px 50px 0 0;
 }
 
-
-@media screen and ( max-width:1200px) {
-  .titleStyle{
+@media screen and (max-width: 1200px) {
+  .titleStyle {
     font-size: 70px;
   }
-  .pStyle{
+  .pStyle {
     font-size: 22px;
   }
- 
 }
-@media screen and ( max-width:1100px) {
-  .titleStyle{
+@media screen and (max-width: 1100px) {
+  .titleStyle {
     font-size: 70px;
   }
-  .introTxt{
-    padding:  80px 0 0 0;
+  .introTxt {
+    padding: 80px 0 0 0;
   }
-  
 }
 
-@media screen and ( max-width:1020px) {
-
-  .pStyle{
+@media screen and (max-width: 1020px) {
+  .pStyle {
     padding: 30px 0px;
     font-size: 18px;
   }
 }
-@media screen and ( max-width:900px) {
-  .introTxt{
-    padding:  40px 0 0 0;
+@media screen and (max-width: 900px) {
+  .introTxt {
+    padding: 40px 0 0 0;
   }
-  .pStyle{
+  .pStyle {
     padding: 0px 0px;
     font-size: 17px;
   }
 }
-@media screen and ( max-width:870px) {
-
-  .introTxt{
-    padding:  50px 0 0 0;
+@media screen and (max-width: 870px) {
+  .introTxt {
+    padding: 50px 0 0 0;
   }
-
 }
-@media screen and ( max-width:768px) {
-  .titleStyle{
+@media screen and (max-width: 768px) {
+  .titleStyle {
     font-size: 70px;
   }
-  .spanStyle{
+  .spanStyle {
     font-size: 40px;
   }
-  .introTxt{
-    padding:  30px 0 0 0;
+  .introTxt {
+    padding: 30px 0 0 0;
   }
-  .pStyle{
+  .pStyle {
     padding: 0px 0px;
     font-size: 16px;
   }
-  .Home{
+  .Home {
     background-color: var(--color1);
     padding: 0 0 65px 0;
   }
 }
 
-
-@media screen and ( max-width:610px) {
-
-  .pStyle{
+@media screen and (max-width: 610px) {
+  .pStyle {
     padding: 0px 10px;
     font-size: 14px;
   }
-  .introTxt{
-    padding:  40px 0 0 0;
+  .introTxt {
+    padding: 40px 0 0 0;
   }
 }
 
-
-@media screen and ( max-width:450px) {
-  .titleStyle{
+@media screen and (max-width: 450px) {
+  .titleStyle {
     font-size: 65px;
   }
-  .spanStyle{
+  .spanStyle {
     font-size: 45px;
   }
-  .pStyle{
+  .pStyle {
     padding: 0px 10px;
     font-size: 12px;
   }
-  .introTxt{
-    padding:  50px 0 0 0;
+  .introTxt {
+    padding: 50px 0 0 0;
   }
 }
