@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crushed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul{
+  list-style-type: none;
+}
+
+:root{
+  --color1 :#67729D; 
+  --color2 :#BB9CC0;
+  --color3 :#E7BCDE;
+  --color4 :#FED9ED;
+  --crushedRegular : "Crushed" ;
+  --DancingScript : "Dancing Script";
+  --CrimsonText: "Crimson Text";
+  --swiper-theme-color: #FED9ED;
+
+}
+.color1{
+  color: var(--color1) !important;
+}
+.bgcolor1{
+  background-color: var(--color1) !important;
+}
+
+.color2{
+  color: var(--color2) !important;
+}
+.bgcolor2{
+  background-color: var(--color2) !important;
+}
+
+.color3{
+  color: var(--color3) !important;
+}
+.bgcolor3{
+  background-color: var(--color3) !important;
+}
+
+.color4{
+  color: var(--color4) !important;
+}
+.bgcolor4{
+  background-color: var(--color4) !important;
+}
+
+.container{
+  width: 87% !important;
+
+}
+.crushedFont{
+  font-family: var(--crushedRegular);
+}
+.DancingScriptFont{
+  font-family: var(--DancingScript);
+}
+.CrimsonTextFont{
+  font-family: var(--CrimsonText);
+}
+.letterSpace{
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width:400px){
+  .container{
+    width: 95% !important;
+  }
+}
+
