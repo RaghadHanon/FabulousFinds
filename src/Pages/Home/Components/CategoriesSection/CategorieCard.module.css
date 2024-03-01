@@ -1,20 +1,11 @@
+
+
+
 .card {
   background-color: var(--color1);
 
-  transition: all 0.5s ease-out;
 }
 
-.card:hover {
- /* background-color: var(--color4);*/
- /* box-shadow: 0px 0px 20px var(--color4);*/
-  opacity: 90%;
-
-  transition: all 0.3s ease-out;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-}
 
 .cardImage {
   width: 70%;
@@ -26,14 +17,16 @@
   border-radius: 50%;
   border: 2px solid var(--color4);
 
-  transition: all 0.3s ease-out;
+  transition: all 2s ease-out;
 }
 
 .card:hover .frame {
-  /*border: 2px solid var(--color1);*/
+  background-color: var(--color4);
   transform: rotatey(360deg);
-  transition: all 1.5s ease-out;
+  transition: all 2s ease-in-out;
 }
+
+
 
 .circle {
   background-color: var(--color4);
@@ -42,11 +35,12 @@
   border-radius: 50%;
   bottom: 3%;
   right: 3%;
-  transition: all 0.3s ease-out;
+  transition: all 2s ease-out;
 }
 
 .card:hover .circle {
- /* background-color: var(--color1);*/
+  background-color: var(--color1);
+
 }
 
 .titleStyle {
@@ -57,18 +51,6 @@
   transition: all 0.3s ease-out;
 }
 
-.card:hover .titleStyle {
- /* color: var(--color1);*/
- animation: colorOfTitle 1s linear forwards;
-}
-@keyframes colorOfTitle{
-  50%{
-    color: var(--color1);
-  }
-  100%{
-    color: var(--color4);
-  }
-}
 
 
 @media screen and (max-width:450px) {
