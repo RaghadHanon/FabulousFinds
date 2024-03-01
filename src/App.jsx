@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import Root from './routs/Root.jsx'
 import Home from './Pages/Home/Components/Intro/Home.jsx'
 import Products from './Pages/Products/Components/Products.jsx'
@@ -40,7 +40,6 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
