@@ -40,6 +40,7 @@
   color: var(--color4);
   text-align: center;
   transition: all 0.3s ease-out;
+  font-size:28;
 }
 
 @media screen and (max-width: 450px) {
@@ -55,6 +56,9 @@
   .circle {
     width: 123px;
     height: 123px;
+  }
+  .titleStyle {
+    font-size:23;
   }
 
 
