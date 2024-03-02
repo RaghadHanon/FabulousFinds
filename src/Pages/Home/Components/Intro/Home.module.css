@@ -62,7 +62,7 @@
     font-size: 40px;
   }
   .introTxt {
-    padding: 30px 0 0 0;
+    padding: 60px 0 0 0;
   }
   .pStyle {
     padding: 0px 0px;
@@ -84,18 +84,32 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 575px) {
   .titleStyle {
-    font-size: 65px;
+    font-size: 90px;
+    text-align: center;
   }
   .spanStyle {
-    font-size: 45px;
+    font-size: 50px;
+    text-align: center;
   }
   .pStyle {
-    padding: 0px 10px;
-    font-size: 12px;
+    padding: 30px 0px;
+    font-size: 18px;
+    text-align: center;
   }
   .introTxt {
-    padding: 50px 0 0 0;
+    padding: 100px 0px 0px;
+  }
+  .svgStyle {
+    padding: 0px 65px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 526px) {
+  .svgStyle {
+    padding: 0px 25px;
+    margin: 0;
   }
 }

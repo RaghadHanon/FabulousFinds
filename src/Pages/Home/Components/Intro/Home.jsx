@@ -27,7 +27,7 @@ function Home() {
           </defs>
         </svg>
 
-        <div className={`container  position-relative d-flex  justify-content-between align-items-center`}>
+        <div className={`container ${style.container}  position-relative d-flex flex-wrap  justify-content-between align-items-center`}>
 
           <div className={` d-flex flex-column col-md-7 col-sm-8   ${style.introTxt}`}>
             <h1 className={`DancingScriptFont color4 ${style.titleStyle}`}> Fabulous</h1>
