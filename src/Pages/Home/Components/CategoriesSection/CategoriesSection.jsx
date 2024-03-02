@@ -75,6 +75,7 @@ function CategoriesSection() {
             }}
             pagination={{
               clickable: true,
+              type: 'progressbar',
             }}
 
             autoplay={{
