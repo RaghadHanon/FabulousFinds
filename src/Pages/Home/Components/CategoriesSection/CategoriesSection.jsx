@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -27,7 +28,7 @@ function CategoriesSection() {
 
   let [loader, setLoader] = useState(true);
   let [error, setError] = useState('');
-  let [CategoryCard, setCategotyCards] = useState([]);
+  let [categoryCard, setCategotyCards] = useState([]);
 
   const getData = async () => {
     try {
@@ -79,7 +80,7 @@ function CategoriesSection() {
             }}
 
             autoplay={{
-              delay: 3000,
+              delay: 3500,
               disableOnInteraction: true,
             }}
 
@@ -119,9 +120,9 @@ function CategoriesSection() {
 
 
             {
-              CategoryCard.map(category =>
+              categoryCard.map(category =>
                 <SwiperSlide key={category.id}>
-                  <CategorieCard key={category.id} title={category.name} imgSRC={categoriesImg[indx++]} />
+                  <Link className={`${style.linkStyle}`} to={`/Products/${category.name}/${category.id}`}> <CategorieCard  key={category.id} title={category.name} imgSRC={categoriesImg[indx++]} /> </Link>
                 </SwiperSlide>
               )
             }

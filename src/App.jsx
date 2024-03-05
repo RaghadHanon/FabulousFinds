@@ -5,6 +5,7 @@ import Root from './routs/Root.jsx'
 import Home from './Pages/Home/Components/Intro/Home.jsx'
 import Products from './Pages/Products/Components/Products.jsx'
 import Categories from './Pages/Categories/Components/Categories.jsx'
+import Product from './components/Product.jsx'
 import Cart from './Pages/Cart/Components/Cart.jsx'
 import Login from './Pages/Login/Components/Login.jsx'
 import Signup from './Pages/Signup/Components/Signup.jsx'
@@ -22,6 +23,12 @@ const router = createBrowserRouter([
       },{
         path:'/Products',
         element:<Products/>,
+      },{
+        path:'/Products/:name/:id',
+        element:<Products/>,
+      },{
+        path:'/Products/:id',
+        element:<Product/>,
       },{
         path:'/Categories',
         element :<Categories/>,
