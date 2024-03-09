@@ -21,6 +21,10 @@ ul{
   --swiper-theme-color: #FED9ED;
 
 }
+
+.whiteC{
+  color: #fff;
+}
 .color1{
   color: var(--color1) !important;
 }

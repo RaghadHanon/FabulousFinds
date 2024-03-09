@@ -47,7 +47,7 @@ function Product() {
   return (
     <>
       {error ?? <p> {error} </p>}
-      <div className={`container `}>
+      <div className={`container  `}>
         <div className={`d-flex flex-column justify-content-between  gap-3 ${style.box} `}>
 
           <div >

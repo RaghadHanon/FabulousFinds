@@ -1,0 +1,67 @@
+.login{
+  border-radius: 6px 6px 6px 170px;
+background: #FFF;
+box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.animation{
+  padding:50px;
+  border-top-right-radius: 170px;
+  border-bottom-left-radius: 170px;
+  animation: move 1.5s ease-out ;
+}
+@keyframes move{
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.inputStyle{
+  border: 0;
+  border-bottom: 2px solid var(--color1);
+}
+.inputStyle:focus{
+  outline: none;
+}
+.submit{
+  border: 0px;
+}
+
+
+
+@media screen and (max-width:1000px) {
+
+  .animation {
+    padding: 20px 0px 20px 30;
+  }
+}
+
+
+@media screen and (max-width:760px) {
+  .login {
+    border-radius: 6px 6px 6px 170px;
+  }
+
+  .animation {
+    padding: 50px;
+    border-top-right-radius: 0;
+  }
+
+  
+@keyframes move{
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+}

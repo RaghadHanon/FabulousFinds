@@ -30,7 +30,7 @@ function NavBar() {
           </ul>
           <ul className="navbar-nav  align-self-end gap-2">
             <li className="nav-item ">
-              <NavLink className={`nav-link fs-6  crushedFont  color4 letterSpace`} to="/Login" >SIGN IN</NavLink>
+              <NavLink className={`nav-link fs-6  crushedFont  color4 letterSpace`} to="/Login" >Log IN</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className={`nav-link fs-6  crushedFont  color4 letterSpace`} to="/Signup">SIGN UP</NavLink>
