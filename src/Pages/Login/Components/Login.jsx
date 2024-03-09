@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import style from './login.module.css'
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 function Login() {
@@ -21,6 +22,11 @@ function Login() {
     const { data } = await axios.post(`${import.meta.env.VITE_API}/auth/signin`, user);
     console.log(data);
     setUser({ email: '', password: '' });
+
+
+    if(data.message=='success'){
+      toast('login is successfull!');
+    }
   }
   return (
     <div className={`container`}>
@@ -42,7 +48,7 @@ function Login() {
         </form>
         <div className={`${style.animation} bgcolor1 col-md-6 col-12 d-flex flex-column justify-content-center align-items-center `}>
           <svg className={`col-12`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 732 626" fill="none">
-            <g clip-path="url(#clip0_139_33)">
+            <g clipPath="url(#clip0_139_33)">
               <path d="M376.763 311.697C379.384 322.197 375.878 332.05 368.935 333.704C361.991 335.357 354.24 328.186 351.62 317.681C350.514 313.499 350.464 309.116 351.475 304.897L340.957 260.267L362.821 255.807L370.869 300.278C373.755 303.57 375.776 307.485 376.763 311.697Z" fill="#FDADB0" />
               <path d="M285.095 566.897L286.442 596.149L285.093 604.244L289.814 613.687L326.913 617.734L328.937 600.196L309.376 590.078L308.807 573.55L285.095 566.897Z" fill="#FDADB0" />
               <path d="M324.215 610.989L322.191 613.687L283.34 602.491C283.34 602.491 285.093 619.758 285.093 623.13C285.093 626.503 349.173 626.503 358.815 625.154C368.458 623.805 365.361 615.036 365.361 615.036L325.373 596.107L324.215 610.989Z" fill="#2F2E43" />

@@ -12,9 +12,17 @@ function Products() {
   const [error, setError] = useState('');
   const [products, setProducts] = useState([]);
 
+  let url ;
+  console.log(id);
+  if(id != undefined){
+     url = `https://ecommerce-node4.vercel.app/products/category/${id}`;
+  }else{
+    url =  `https://ecommerce-node4.vercel.app/products?page=1&limit=10`;
+  }
+
   const getData = async () => {
     try {
-      const { data } = await axios.get(`https://ecommerce-node4.vercel.app/products/category/${id}`);
+      const { data } = await axios.get(url);
       setError('');
       setProducts(data.products);
     } catch {
@@ -41,9 +49,9 @@ function Products() {
         <div className={`container`}>
           <div>
             <div className={` position-relative   ${style.box}`}>
-              <h1 className={`py-2 px-3  DancingScriptFont color1 ${style.category}`}>{name}</h1>
+              <h1 className={`py-2 px-3  DancingScriptFont color1 ${style.category}`}>{name?name:"Products"}</h1>
 
-              <div className={`${style.cards} d-flex justify-content-between pt-4 pb-5 flex-wrap align-items-stretch row-gap-4  position-absolute`}>
+              <div className={`${style.cards} d-flex justify-content-start gap-4 pt-4 pb-5 flex-wrap align-items-stretch row-gap-4  position-absolute`}>
                 {
                   products.map(product =>
                     <div className={`d-flex flex-column  position-relative justify-content-between gap-3 ${style.card} `} key={product.id}>
@@ -72,3 +80,6 @@ function Products() {
 }
 
 export default Products
+
+
+

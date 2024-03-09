@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -122,7 +122,9 @@ function CategoriesSection() {
             {
               categoryCard.map(category =>
                 <SwiperSlide key={category.id}>
-                  <Link className={`${style.linkStyle}`} to={`/Products/${category.name}/${category.id}`}> <CategorieCard  key={category.id} title={category.name} imgSRC={categoriesImg[indx++]} /> </Link>
+                  <Link className={`${style.linkStyle}`} to={`/Products/${category.name}/${category.id}`}>
+                    <CategorieCard key={category.id} title={category.name} imgSRC={categoriesImg[indx++]} />
+                  </Link>
                 </SwiperSlide>
               )
             }

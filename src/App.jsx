@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Root from './routs/Root.jsx'
 import Home from './Pages/Home/Components/Intro/Home.jsx'
 import Products from './Pages/Products/Components/Products.jsx'
@@ -51,6 +55,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router}/>
+       <ToastContainer />
     </>
   )
 }

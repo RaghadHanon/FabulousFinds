@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import style from './Signup.module.css'
 import axios from 'axios';
 
+import { toast } from 'react-toastify';
+
 function Signup() {
   const [user,setUser] = useState({
     userName:'',
@@ -37,6 +39,12 @@ function Signup() {
     const {data} = await axios.post(`${import.meta.env.VITE_API}/auth/signup`,formData);
 
     e.target.reset();
+
+    console.log()
+
+    if(data.message=='success'){
+      toast('Your account has been created successfully!');
+    }
   }
   return (
     <div className={`container`}>
