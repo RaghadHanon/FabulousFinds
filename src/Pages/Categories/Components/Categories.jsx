@@ -1,8 +1,9 @@
 import React from 'react'
+import CategoriesSection from '../../Home/Components/CategoriesSection/CategoriesSection'
 
 function Categories() {
   return (
-    <div>Categories</div>
+    <CategoriesSection/>
   )
 }
 
