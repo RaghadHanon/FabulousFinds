@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 
 
 function Login() {
+  
+  const [loader,setLoader]=useState(false);
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -19,13 +21,16 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post(`${import.meta.env.VITE_API}/auth/signin`, user);
-    console.log(data);
-    setUser({ email: '', password: '' });
-
-
-    if(data.message=='success'){
+    setLoader(true);
+    try{
+      const { data } = await axios.post(`${import.meta.env.VITE_API}/auth/signin`, user);
+      setUser({ email: '', password: '' });
       toast('login is successfull!');
+    }
+    catch(error){
+      toast.error(error.response.data.message);
+    }finally{
+      setLoader(false);
     }
   }
   return (
@@ -44,7 +49,7 @@ function Login() {
           </div>
 
 
-          <input className={`bgcolor1 fw-semibold whiteC p-2  ${style.submit}`} type='submit' value="login"></input>
+          <input className={`bgcolor1 fw-semibold whiteC p-2  ${style.submit}`} type='submit' disabled={loader?'disabled':null } value="login"></input>
         </form>
         <div className={`${style.animation} bgcolor1 col-md-6 col-12 d-flex flex-column justify-content-center align-items-center `}>
           <svg className={`col-12`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 732 626" fill="none">

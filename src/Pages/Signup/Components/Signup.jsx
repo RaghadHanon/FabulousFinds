@@ -5,6 +5,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 function Signup() {
+  const [loader,setLoader]=useState(false);
   const [user,setUser] = useState({
     userName:'',
     email:'',
@@ -27,6 +28,7 @@ function Signup() {
   }
   const handleSubmit = async (e)=>{
     e.preventDefault();
+    setLoader(true);
     const formData =new FormData();
     formData.append('userName',user.userName);
     formData.append('email',user.email);
@@ -34,16 +36,15 @@ function Signup() {
     formData.append('image',user.image);
 
     
-    console.log(formData);
-    
-    const {data} = await axios.post(`${import.meta.env.VITE_API}/auth/signup`,formData);
-
-    e.target.reset();
-
-    console.log()
-
-    if(data.message=='success'){
+    try{
+      const {data} = await axios.post(`${import.meta.env.VITE_API}/auth/signup`,formData);
+      e.target.reset();
       toast('Your account has been created successfully!');
+    }
+    catch(error){
+      toast.error(error.response.data.message);
+    }finally{
+      setLoader(false);
     }
   }
   return (
@@ -67,7 +68,7 @@ function Signup() {
             <input type='file' id='image' name='image'  onChange={handleImageChange} ></input>
           </div>
 
-          <input  className={`bgcolor1 fw-semibold whiteC p-2  ${style.submit}`} type='submit' value="Sign up"></input>
+          <input  className={`bgcolor1 fw-semibold whiteC p-2  ${style.submit}`} type='submit' disabled={loader?'disabled':null } value="Sign up"></input>
         </form>
         <div className={`${style.animation} bgcolor1 col-md-6 col-12 d-flex flex-column justify-content-center align-items-center `}>
           <svg className={`col-md-10 col-8`} xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 363 446" fill="none">

@@ -36,6 +36,9 @@
   border: 0px;
 }
 
+.submit:disabled{
+  opacity: 70%;
+}
 @media screen and (max-width:1000px) {
 
   .animation {
