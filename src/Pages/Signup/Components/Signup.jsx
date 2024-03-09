@@ -5,6 +5,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 function Signup() {
+  
+  const navigate = useNavigate();
   const [loader,setLoader]=useState(false);
   const [user,setUser] = useState({
     userName:'',
@@ -40,6 +42,7 @@ function Signup() {
       const {data} = await axios.post(`${import.meta.env.VITE_API}/auth/signup`,formData);
       e.target.reset();
       toast('Your account has been created successfully!');
+      navigate('/Login')
     }
     catch(error){
       toast.error(error.response.data.message);

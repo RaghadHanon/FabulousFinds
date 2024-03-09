@@ -15,6 +15,7 @@ import Login from './Pages/Login/Components/Login.jsx'
 import Signup from './Pages/Signup/Components/Signup.jsx'
 import './App.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import ProtectedRoutes from './auth/ProtectedRoutes.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,8 +38,13 @@ const router = createBrowserRouter([
         path:'/Categories',
         element :<Categories/>,
       },{
+        
         path:'/Cart',
-        element:<Cart/>,
+        element:
+        <ProtectedRoutes>
+          <Cart/>
+        </ProtectedRoutes>
+        ,
       },{
         path:'/Login',
         element :<Login/>,

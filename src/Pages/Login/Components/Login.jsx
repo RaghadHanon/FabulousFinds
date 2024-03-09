@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import style from './login.module.css'
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
-  
+  const navigate = useNavigate();
   const [loader,setLoader]=useState(false);
   const [user, setUser] = useState({
     email: '',
@@ -24,8 +25,10 @@ function Login() {
     setLoader(true);
     try{
       const { data } = await axios.post(`${import.meta.env.VITE_API}/auth/signin`, user);
+      localStorage.setItem('userToken',data.token);
       setUser({ email: '', password: '' });
       toast('login is successfull!');
+      navigate('/')
     }
     catch(error){
       toast.error(error.response.data.message);
