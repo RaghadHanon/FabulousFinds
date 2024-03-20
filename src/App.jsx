@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Root from './routs/Root.jsx'
 import Home from './Pages/Home/Components/Intro/Home.jsx'
 import Products from './Pages/Products/Components/Products.jsx'
+import CategoryProducts from './Pages/Products/Components/CategoryProducts.jsx'
 import Categories from './Pages/Categories/Components/Categories.jsx'
 import Product from './components/Product.jsx'
 import Cart from './Pages/Cart/Components/Cart.jsx'
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
         element:<Products/>,
       },{
         path:'/Products/:name/:id',
-        element:<Products/>,
+        element:<CategoryProducts/>,
       },{
         path:'/Products/:id',
         element:<Product/>,

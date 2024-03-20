@@ -1,66 +1,141 @@
-
 .box {
   border-radius: 6px;
-  background: var(--color1);
+  background: #FFF;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 
-  margin: 8%;
-  padding:2% ;
+  margin: 5%;
+  padding: 5% 6%;
 }
-
-.title {
-  color: #FFF;
-  font-size: 45px;
-  text-transform: capitalize;
-
-}
-
 
 .card {
-  border: 1px solid var(--color1);
-  background-color: #FFF;
 
   border-radius: 6px;
-  padding: 5%;
+  padding: 0px 5%;
   overflow: hidden;
 }
 
-
+.imgContainer {
+  width: 20%;
+}
 
 .imgStyle {
   width: 100%;
   border: 1px solid rgb(215, 215, 215);
 }
 
+.mainImg {
+  width: 80%;
+  border: 1px solid rgb(215, 215, 215);
+}
+
+.imgButton {
+  border: 0px;
+}
 
 
+.title {
+  font-size: 33px;
+}
+
+.shopButton {
+  background-color: var(--color1);
+  color: #FFF;
+  border: 0px;
+  height: 60px;
+  font-size: 20px;
+  width: 60%;
+
+}
+
+.discount {
+  width: 140px;
+  height: 37px;
+  color: #FFF;
+  text-align: center;
+  font-size: 25px;
+  padding: 3px 0;
+  background-color: var(--color1);
+  top: 27px;
+  right: -15px;
+}
 
 @media screen and (max-width:1200px) {
 
   .box {
-    margin: 5% 0 ;
-    padding: 2%;
+    padding: 5% 2%;
   }
+
+  .discount {
+    top: 11px;
+    right: -25px;
   }
-  
+}
+
 
 
 
 @media screen and (max-width:1000px) {
 
-  .text{
-    font-size: 17px;
+  .box {
+    padding: 6% 10%;
+  }
+
+  .discount {
+    top: 27px;
+    right: -20px;
   }
 }
 
 
 
-@media screen and (max-width:650px) {
-  .text {
-    font-size: 13px;
+@media screen and (max-width:985px) {
+
+  .card {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width:833px) {
+  
+.imgContainer {
+  width: 25%;
+}
+
+.mainImg {
+  width: 75%;
+}
+
+}
+
+@media screen and (max-width:600px) {
+  .discount {
+    top: 20px;
+    right: -25px;
+    width: 110px;
+  }
+  .imgContainer {
+    width: 30%;
   }
   
-.category {
-  font-size: 35px;
+  .mainImg {
+    width: 70%;
+  }
+  
+  }
+
+  
+@media screen and (max-width:500px) {
+
+  .box {
+    padding:4% 5%;
+  }
+  .shopButton {
+    width: 100%;
+
+  }
+  
+.title {
+  font-size: 27px;
 }
+
 }
