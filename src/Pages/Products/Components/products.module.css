@@ -98,6 +98,12 @@
     height: 1300px;
   }
 
+  
+.card {
+  width: calc((100% - 3rem)/2);
+}
+
+
 }
 
 
@@ -106,7 +112,7 @@
 @media screen and (max-width:720px) {
  
   .box {
-    height: 1100px;
+    height: 1200px;
   }
 
 }
@@ -114,22 +120,18 @@
 
 @media screen and (max-width:650px) {
   .text {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .category {
     font-size: 35px;
   }
-}
-
-@media screen and (max-width:640px) {
-
-  
   .box {
-    height: 2050px;
+    height: 1100px;
   }
 
 }
+
 
 
 
@@ -147,6 +149,10 @@
   .text {
     font-size: 20px;
   }
+    
+  .box {
+    height: 2100px;
+  }
 
 }
 
@@ -155,20 +161,28 @@
 
   
   .box {
+    height: 2000px;
+  }
+
+}
+
+@media screen and (max-width:500px) {
+
+  
+  .box {
     height: 1900px;
   }
 
 }
-
-@media screen and (max-width:470px) {
+@media screen and (max-width:435px) {
 
   
   .box {
-    height: 1700px;
+    height: 1750px;
   }
 
 }
-@media screen and (max-width:360px) {
+@media screen and (max-width:375px) {
 
   .category {
     font-size: 27px;
@@ -176,6 +190,10 @@
 
   .text {
     font-size: 18px;
+  }
+  
+  .box {
+    height: 1650px;
   }
 }
 

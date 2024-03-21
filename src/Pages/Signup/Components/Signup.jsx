@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
 import style from './Signup.module.css'
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
+import {NavLink,useNavigate} from 'react-router-dom'
+
 
 import { toast } from 'react-toastify';
 
@@ -56,23 +57,25 @@ function Signup() {
       <div className={`${style.signUp} m-lg-5 my-5 mx-0   d-flex justify-content-between flex-wrap`}>
         <form  onSubmit={handleSubmit} className={`col-md-6 col-12 p-md-5 p-4 d-flex flex-column justify-content-between gap-3`}>
           <div className='d-flex flex-column gap-3'>
-            <label htmlFor='userName' className={`color1 fw-semibold `}>User Name</label>
+            <label htmlFor='userName' className={`color1 fw-semibold CrimsonTextFont`}>User Name</label>
             <input type='text' id='userName' name='userName' value={user.userName} onChange={handleChange} className={`${style.inputStyle}`} required ></input>
           </div>
           <div  className='d-flex flex-column gap-3'>
-            <label htmlFor='email' className={`color1 fw-semibold`}>Email</label>
+            <label htmlFor='email' className={`color1 fw-semibold CrimsonTextFont`}>Email</label>
             <input type='email' id='email' name='email' value={user.email} onChange={handleChange} className={`${style.inputStyle}` }  required></input>
           </div>
           <div  className='d-flex flex-column gap-3'>
-            <label htmlFor='password' className={`color1 fw-semibold`}>Password</label>
+            <label htmlFor='password' className={`color1 fw-semibold CrimsonTextFont`}>Password</label>
             <input type='password' id='password' name='password' value={user.password} onChange={handleChange} className={`${style.inputStyle}`} required></input>
           </div>
           <div  className='d-flex flex-column gap-3'>
-            <label htmlFor='image' className={`color1 fw-semibold`}>Image</label>
+            <label htmlFor='image' className={`color1 fw-semibold CrimsonTextFont`}>Image</label>
             <input type='file' id='image' name='image'  onChange={handleImageChange} ></input>
           </div>
 
-          <input  className={`bgcolor1 fw-semibold whiteC p-2  ${style.submit}`} type='submit' disabled={loader?'disabled':null } value="Sign up"></input>
+          <NavLink className={`nav-link fs-6  CrimsonTextFont text-center  color1 `} to="/Login" >Already has an account ? log in</NavLink>
+           
+          <input  className={`bgcolor1 fw-semibold whiteC p-2 CrimsonTextFont  ${style.submit}`} type='submit' disabled={loader?'disabled':null } value="Sign up"></input>
         </form>
         <div className={`${style.animation} bgcolor1 col-md-6 col-12 d-flex flex-column justify-content-center align-items-center `}>
           <svg className={`col-md-10 col-8`} xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 363 446" fill="none">

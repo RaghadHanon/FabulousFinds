@@ -43,20 +43,25 @@
 
   .animation {
     padding: 20px 30px 20px 0;
+    border-radius:0px 100px 0px 100px;
+  }
+  .signUp {
+    border-radius: 6px 100px 6px 6px;
   }
 }
 
 
-@media screen and (max-width:760px) {
+@media screen and (max-width:785px) {
   .signUp {
-    border-radius: 6px 6px 6px 170px;
+    border-radius: 6px ;
   }
 
   .animation {
     padding: 50px;
     border-top-right-radius: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
   }
-
 
 
   @keyframes move {
@@ -70,4 +75,5 @@
       opacity: 1;
     }
   }
+
 }

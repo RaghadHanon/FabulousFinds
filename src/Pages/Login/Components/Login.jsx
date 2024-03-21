@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import style from './login.module.css'
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import {NavLink,useNavigate} from 'react-router-dom'
 
 
 function Login() {
@@ -37,22 +37,24 @@ function Login() {
     }
   }
   return (
-    <div className={`container`}>
+    <div className={`container `}>
       <div className={`${style.login} m-lg-5 my-5 mx-0   d-flex flex-row-reverse justify-content-between flex-wrap`}>
 
 
         <form onSubmit={handleSubmit} className={`col-md-6 col-12 p-md-5 p-4 d-flex flex-column justify-content-evenly gap-5`}>
           <div className='d-flex flex-column gap-3'>
-            <label htmlFor='email' className={`color1 fw-semibold`}>Email</label>
+            <label htmlFor='email' className={`color1 fw-semibold CrimsonTextFont`}>Email</label>
             <input type='email' id='email' name='email' value={user.email} onChange={handleChange} className={`${style.inputStyle}`} required></input>
           </div>
           <div className='d-flex flex-column gap-3'>
-            <label htmlFor='password' className={`color1 fw-semibold`}>Password</label>
+            <label htmlFor='password' className={`color1 fw-semibold CrimsonTextFont`}>Password</label>
             <input type='password' id='password' name='password' value={user.password} onChange={handleChange} className={`${style.inputStyle}`} required></input>
           </div>
 
+          <NavLink className={`nav-link fs-6  CrimsonTextFont text-center  color1 `} to="/SendCode" >forget password ?</NavLink>
+          
 
-          <input className={`bgcolor1 fw-semibold whiteC p-2  ${style.submit}`} type='submit' disabled={loader?'disabled':null } value="login"></input>
+          <input className={`bgcolor1 fw-semibold whiteC p-2  CrimsonTextFont ${style.submit}`} type='submit' disabled={loader?'disabled':null } value="login"></input>
         </form>
         <div className={`${style.animation} bgcolor1 col-md-6 col-12 d-flex flex-column justify-content-center align-items-center `}>
           <svg className={`col-12`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 732 626" fill="none">

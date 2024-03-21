@@ -13,6 +13,8 @@ import Categories from './Pages/Categories/Components/Categories.jsx'
 import Product from './components/Product.jsx'
 import Cart from './Pages/Cart/Components/Cart.jsx'
 import Login from './Pages/Login/Components/Login.jsx'
+import SendCode from './Pages/Login/Components/SendCode.jsx';
+import ResetPassword from './Pages/Login/Components/ResetPassword.jsx';
 import Signup from './Pages/Signup/Components/Signup.jsx'
 import './App.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
@@ -39,7 +41,6 @@ const router = createBrowserRouter([
         path:'/Categories',
         element :<Categories/>,
       },{
-        
         path:'/Cart',
         element:
         <ProtectedRoutes>
@@ -50,9 +51,18 @@ const router = createBrowserRouter([
         path:'/Login',
         element :<Login/>,
       },{
+        path:'/SendCode',
+        element:<SendCode/>,
+      },{
+        path:'/ResetPassword',
+        element : <ResetPassword/>,
+      },{
         path:'/Signup',
         element:<Signup/>,
-      }
+      },{
+        path:'/forgetPassword',
+        element :<forgetPassword/>,
+      },
     ]
   }
 ]);
