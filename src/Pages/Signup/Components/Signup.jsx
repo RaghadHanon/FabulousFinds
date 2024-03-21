@@ -43,7 +43,7 @@ function Signup() {
     try{
       const {data} = await axios.post(`${import.meta.env.VITE_API}/auth/signup`,formData);
       e.target.reset();
-      toast('Your account has been created successfully!');
+      toast.success('Your account has been created successfully!');
       navigate('/Login')
     }
     catch(error){

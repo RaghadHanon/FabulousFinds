@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import style from './login.module.css'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import {NavLink,useNavigate} from 'react-router-dom'
-
+import { UserContext } from '../../../Context/User';
 
 function Login() {
+
+  const {setUserToken} = useContext(UserContext);
   const navigate = useNavigate();
   const [loader,setLoader]=useState(false);
   const [user, setUser] = useState({
@@ -27,7 +29,8 @@ function Login() {
       const { data } = await axios.post(`${import.meta.env.VITE_API}/auth/signin`, user);
       localStorage.setItem('userToken',data.token);
       setUser({ email: '', password: '' });
-      toast('login is successfull!');
+      setUserToken(data.token);
+      toast.success('login is successfull!');
       navigate('/')
     }
     catch(error){

@@ -19,6 +19,8 @@ import Signup from './Pages/Signup/Components/Signup.jsx'
 import './App.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import ProtectedRoutes from './auth/ProtectedRoutes.jsx';
+import UserContextProvider from './Context/User.jsx';
+import Profile from './Pages/Profile/Components/Profile.jsx'
 
 
 const router = createBrowserRouter([
@@ -45,8 +47,7 @@ const router = createBrowserRouter([
         element:
         <ProtectedRoutes>
           <Cart/>
-        </ProtectedRoutes>
-        ,
+        </ProtectedRoutes>,
       },{
         path:'/Login',
         element :<Login/>,
@@ -62,7 +63,10 @@ const router = createBrowserRouter([
       },{
         path:'/forgetPassword',
         element :<forgetPassword/>,
-      },
+      },{
+        path: '/Profile',
+        element:<Profile/>,
+      }
     ]
   }
 ]);
@@ -71,7 +75,10 @@ function App() {
 
   return (
     <>
+    
+    <UserContextProvider> 
       <RouterProvider router={router}/>
+    </UserContextProvider>,
        <ToastContainer />
     </>
   )

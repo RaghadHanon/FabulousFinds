@@ -25,6 +25,9 @@ ul{
 .whiteC{
   color: #fff;
 }
+.bgwhiteC{
+  background-color: #fff;
+}
 .color1{
   color: var(--color1) !important;
 }
