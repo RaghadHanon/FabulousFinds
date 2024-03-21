@@ -42,24 +42,24 @@ function ResetPassword() {
 
 
 
-        <form onSubmit={handleSubmit} className={`col-12 p-md-5 p-4 d-flex flex-column justify-content-start gap-4`}>
-          <span className={`text-center DancingScriptFont fs-1 color1 fw-semibold `}>Reset Password!</span>
-          <p className={`color1 fs-6  CrimsonTextFont border-top pt-4`}>
+        <form onSubmit={handleSubmit} className={`col-12  p-4 d-flex flex-column justify-content-start gap-4`}>
+          <span className={`text-center DancingScriptFont fs-2 color1 fw-semibold `}>Reset Password!</span>
+          <p className={`color1 fs-6  CrimsonTextFont border-bottom pb-3 border-top pt-3`}>
             please Provide the email address associated with your account then enter the verification code you received via email,
             and finally set a new password for your account</p>
-            <div className='d-flex flex-column gap-3'>
+            <div className='d-flex flex-column gap-2'>
             <label htmlFor='email' className={`color1 fw-semibold CrimsonTextFont`}>Email</label>
             <input type='email' id='email' name='email' value={user.email} onChange={handleChange} className={`${style.inputStyle}`} required></input>
           </div>
-          <div className='d-flex flex-column gap-3'>
+          <div className='d-flex flex-column gap-2'>
             <label htmlFor='password' className={`color1 fw-semibold CrimsonTextFont`}>New Password</label>
             <input type='password' id='password' name='password' value={user.password} onChange={handleChange} className={`${style.inputStyle}`} required></input>
           </div>
-          <div className='d-flex flex-column gap-3'>
+          <div className='d-flex flex-column gap-2'>
             <label htmlFor='code' className={`color1 fw-semibold CrimsonTextFont`}>Code</label>
             <input type='text' id='code' name='code' value={user.code} onChange={handleChange} className={`${style.inputStyle}`} required></input>
           </div>
-          <input className={`bgcolor1 fw-semibold whiteC p-2  ${style.submit}`} type='submit' disabled={loader ? 'disabled' : null} value="Submit"></input>
+          <input className={`bgcolor1 CrimsonTextFont fw-semibold whiteC p-2 mt-4 ${style.submit}`} type='submit' disabled={loader ? 'disabled' : null} value="Submit"></input>
         </form>
 
       </div>

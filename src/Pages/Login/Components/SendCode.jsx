@@ -37,16 +37,16 @@ function SendCode() {
 
 
 
-        <form onSubmit={handleSubmit} className={`col-12 p-md-5 p-4 d-flex flex-column justify-content-start gap-5`}>
+        <form onSubmit={handleSubmit} className={`col-12 p-md-5 p-4 d-flex flex-column justify-content-start gap-3`}>
           <span className={`text-center DancingScriptFont fs-1 color1 fw-semibold `}>Hey There!</span>
-          <p className={`color1 fs-6  CrimsonTextFont border-top pt-4`}>
+          <p className={`color1 fs-6  CrimsonTextFont border-bottom pb-3 border-top pt-3`}>
             Please provide the email associated with your account so that we can send you a code to initiate the password reset process.
           </p>
-          <div className='d-flex flex-column gap-3'>
+          <div className='d-flex flex-column gap-2'>
             <label htmlFor='email' className={`color1 fw-semibold CrimsonTextFont`}>Email</label>
             <input type='email' id='email' name='email' value={userEmail.email} onChange={handleChange} className={`${style.inputStyle}`} required></input>
           </div>
-          <input className={`bgcolor1 fw-semibold whiteC p-2  ${style.submit}`} type='submit' disabled={loader ? 'disabled' : null} value="Submit"></input>
+          <input className={`bgcolor1 fw-semibold CrimsonTextFont whiteC p-3 mt-4 ${style.submit}`} type='submit' disabled={loader ? 'disabled' : null} value="Send Code"></input>
         </form>
 
       </div>
