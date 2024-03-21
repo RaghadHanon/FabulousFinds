@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {Navigate} from 'react-router-dom'
+import {UserContext} from '../Context/User'
 
 function ProtectedRoutes({children}) {
   const navigate = useNavigate();
-  const token =localStorage.getItem('userToken')
+  const {loggedIn} = useContext(UserContext);
 
-  if(!token){
+  if(!loggedIn){
    return <Navigate to='/Login' replace />;
   }
   return children;

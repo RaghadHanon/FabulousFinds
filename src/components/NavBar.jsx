@@ -7,7 +7,7 @@ function NavBar() {
   const { User,loggedIn,setLoggedIn,setUserToken} = useContext(UserContext);
   console.log(User);
   const logOut = ()=>{
-    localStorage.removeItem('token');
+    localStorage.removeItem('userToken');
     setUserToken(null);
     setLoggedIn(false);
   };
