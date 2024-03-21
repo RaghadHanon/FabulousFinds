@@ -38,7 +38,7 @@ function SendCode() {
 
 
         <form onSubmit={handleSubmit} className={`col-12 p-md-5 p-4 d-flex flex-column justify-content-start gap-3`}>
-          <span className={`text-center DancingScriptFont fs-1 color1 fw-semibold `}>Hey There!</span>
+          <span className={`text-center DancingScriptFont fs-2 color1 fw-semibold `}>Hey There!</span>
           <p className={`color1 fs-6  CrimsonTextFont border-bottom pb-3 border-top pt-3`}>
             Please provide the email associated with your account so that we can send you a code to initiate the password reset process.
           </p>
