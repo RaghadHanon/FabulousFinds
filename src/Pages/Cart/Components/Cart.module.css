@@ -13,6 +13,7 @@
 }
 .MyContainer h1 {
   font-size: 55px;
+
   font-weight: 700;
 }
 
@@ -44,6 +45,6 @@ img {
   height: 45px;
   background-color: var(--color1);
   color: #fff;
-  border: 0;
+  border: 0px;
   border-radius: 5px;
 }
