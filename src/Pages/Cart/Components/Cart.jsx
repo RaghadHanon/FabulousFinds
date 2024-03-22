@@ -121,7 +121,7 @@ function Cart() {
                     />
                     <div className={`d-flex flex-column justify-content-between  py-1`}>
                       <h3 className={`CrimsonTextFont color1 text-capitalize fw-semibold`}>{product.details.name}</h3>
-                      <div onClick={() => removeItem(product.productId)} className={`CrimsonTextFont d-flex  gap-3 align-items-center color1 fw-semibold  `}>
+                      <div onClick={() => removeItem(product.productId)} className={` d-flex  gap-3 align-items-center CrimsonTextFont color1 fw-semibold  `}>
                         <i
                           className="fa-solid fa-xmark"
                           style={{ color: "#67729d" }}
@@ -131,16 +131,16 @@ function Cart() {
                     </div>
                   </div>
                   <div className={`d-flex align-self-stretch gap-3 col-3 ps-3 border-start border-secondary-subtle`}>
-                    <div className={`d-flex flex-column align-self-stretch justify-content-between w-100`}>
-                      <div className={`d-flex justify-content-between gap-2  `}>
-                        <span>Quantity</span>
+                    <div className={`d-flex flex-column align-self-stretch justify-content-between w-100 row-gap-2`}>
+                      <div className={`d-flex justify-content-between gap-2 flex-wrap row-gap-2 `}>
+                        <span className={`CrimsonTextFont color1 fw-semibold`}>Quantity</span>
                         <div className={`d-flex flex-wrap justify-content-between align-items-center gap-2`}>
                           <i
                             onClick={() => increaseQuantity(product.productId)}
                             className="fa-solid fa-plus"
                             style={{ color: "#67729d" }}
                           ></i>
-                          <span>{product.quantity}</span>
+                          <span className={`CrimsonTextFont color1 fw-semibold`}>{product.quantity}</span>
                           <i
                             onClick={() => { if (product.quantity > 0) decreaseQuantity(product.productId) }}
                             className="fa-solid fa-minus"
@@ -148,13 +148,13 @@ function Cart() {
                           ></i>
                         </div>
                       </div>
-                      <div className={`d-flex justify-content-between gap-2  `}>
-                        <span>Price</span>
-                        <span>{product.details.finalPrice}</span>
+                      <div className={`d-flex justify-content-between gap-2 flex-wrap row-gap-2 `}>
+                        <span className={`CrimsonTextFont color1 fw-semibold`}>Price</span>
+                        <span className={`CrimsonTextFont color1 fw-semibold`}>$ {product.details.finalPrice}</span>
                       </div>
-                      <div className={`d-flex justify-content-between gap-2  `}>
-                        <span>Subtotal</span>
-                        <span>{product.quantity * product.details.price}</span>
+                      <div className={`d-flex justify-content-between gap-2  flex-wrap row-gap-2`}>
+                        <span className={`CrimsonTextFont color1 fw-semibold`}>Subtotal</span>
+                        <span className={`CrimsonTextFont color1 fw-semibold`}>$ {product.quantity * product.details.price}</span>
                       </div>
                     </div>
                   </div>
