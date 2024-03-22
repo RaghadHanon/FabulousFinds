@@ -6,28 +6,44 @@
   border-radius: 6px;
   background: #fff;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-
 }
 
-.cart{
+.cart {
   width: 75%;
 }
-.MyContainer h1{
+.MyContainer h1 {
   font-size: 55px;
   font-weight: 700;
 }
 
-.summary{
+.summary {
   width: 23%;
 }
 
-.cartItem{
-  border: 1px solid #D0D0D0;
+.cartItem {
+  border: 1px solid #d0d0d0;
 }
 
-img{
+img {
   width: 20%;
 }
-.cartItem h3{
+.cartItem h3 {
   font-size: 20px;
+}
+
+.summDiv {
+  border-radius: 5px;
+  border: 1px solid #d6d6d6;
+  box-shadow: 0px 0px 3px 0px rgb(220, 220, 220);
+  width: 100%;
+  height: 50px;
+  color: #9a9999;
+}
+
+.summary button{
+  height: 45px;
+  background-color: var(--color1);
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
 }

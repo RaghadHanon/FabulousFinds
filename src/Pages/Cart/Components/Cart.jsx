@@ -165,25 +165,25 @@ function Cart() {
         </div>
         <div className={`${style.box} ${style.summary}  p-4  d-flex flex-column gap-5`}>
           <h3 className={`DancingScriptFont color1`}>Cart Summary</h3>
-          <div>
-            <div>
+          <div className={` d-flex flex-column justify-content-between gap-4`}>
+            <div className={`${style.summDiv} d-flex justify-content-between align-items-center px-3 CrimsonTextFont fw-semibold `}>
               <span>Free shipping</span>
               <span>$0.00</span>
             </div>
-            <div>
+            <div className={`${style.summDiv} d-flex justify-content-between align-items-center px-3 CrimsonTextFont fw-semibold `}>
               <span>Express shipping</span>
               <span>$15.00</span>
             </div>
-            <div>
+            <div className={`${style.summDiv} d-flex justify-content-between align-items-center px-3 CrimsonTextFont fw-semibold `}>
               <span>Pick Up</span>
               <span>%21.00</span>
             </div>
           </div>
-          <div>
+          <div className={`color1 d-flex justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder fs-5`}>
             <span>Total</span>
-            <span>{totalCartPrice}</span>
+            <span>$ {Math.round(totalCartPrice)}</span>
           </div>
-          <button>Checkout</button>
+          <button className={`CrimsonTextFont fw-semibold`} >Checkout</button>
         </div>
       </div>
     </div>
