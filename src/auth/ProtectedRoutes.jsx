@@ -8,9 +8,9 @@ function ProtectedRoutes({children}) {
   const {loggedIn} = useContext(UserContext);
 
   if(!loggedIn){
-   return <Navigate to='/Login' replace />;
+   return <Navigate to='/Login' replace />
   }
-  return children;
+  return children
 }
 
 export default ProtectedRoutes

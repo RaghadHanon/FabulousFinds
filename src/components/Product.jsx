@@ -7,6 +7,7 @@ import style from './product.module.css'
 
 import { toast } from 'react-toastify';
 import Loader from './Loader';
+
 function Product() {
 
   const { loggedIn } = useContext(UserContext);
@@ -15,7 +16,6 @@ function Product() {
 
 
   const [loader, setLoader] = useState(true);
-  const [error, setError] = useState('');
   const [product, setProduct] = useState({});
   const [reviews, setReviews] = useState({});
   const [displayImg, setDisplayImg] = useState('');
@@ -25,8 +25,6 @@ function Product() {
   const getData = async () => {
     try {
       const { data } = await axios.get(`https://ecommerce-node4.vercel.app/products/${id}`);
-      setError('');
-
       console.log(data);
       setProduct(data.product);
       setReviews(data.product.reviews);
@@ -82,7 +80,6 @@ function Product() {
 
   return (
     <>
-      {error ?? <p> {error} </p>}
       <div className={`container  `}>
         <div className={`d-flex  flex-wrap row-gap-3 justify-content-between  position-relative ${style.box} `}>
           {product.discount != 0 ? <span className={`text-decoration-line-through position-absolute CrimsonTextFont ${style.discount} `}>{product.price}$</span> : <span></span>}
