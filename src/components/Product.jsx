@@ -1,12 +1,16 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect, useContext } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
+import { UserContext } from '../Context/User'
 import style from './product.module.css'
 
+import { toast } from 'react-toastify';
 import Loader from './Loader';
 function Product() {
 
+  const { loggedIn } = useContext(UserContext);
+  const navigate = useNavigate();
   const { id } = useParams();
 
 
@@ -29,9 +33,8 @@ function Product() {
       setDisplayImg(data.product.mainImage.secure_url);
       setRating(data.avgRating);
 
-
     } catch {
-      setError("Can not load Data!");
+      toast.error(error.response.data.message);
     }
     finally {
       setLoader(false);
@@ -42,6 +45,37 @@ function Product() {
     getData();
   }, []);
 
+  const addToCart = async (productId) => {
+
+    if (loggedIn) {
+
+
+      const token = localStorage.getItem('userToken');
+      try {
+        const { data } = await axios.post(`https://ecommerce-node4.vercel.app/cart`, {
+          productId, //saame as productId = productId, becouse name is the same
+        }, {
+          headers: {
+            Authorization: `Tariq__${token}`
+          }
+        });
+
+        toast.success('Product successfully added!');
+
+
+      } catch (error) {
+        toast.error(error.response.data.message);
+      }
+      finally {
+        setLoader(false);
+      }
+    } else {
+
+      toast.error('Please Login to your account first')
+    }
+
+  }
+
   if (loader)
     return <Loader />
 
@@ -51,12 +85,12 @@ function Product() {
       {error ?? <p> {error} </p>}
       <div className={`container  `}>
         <div className={`d-flex  flex-wrap row-gap-3 justify-content-between  position-relative ${style.box} `}>
-          {product.discount != 0 ? <span className={`text-decoration-line-through position-absolute CrimsonTextFont ${style.discount} `}>{product.price}$</span>:<span></span>}
+          {product.discount != 0 ? <span className={`text-decoration-line-through position-absolute CrimsonTextFont ${style.discount} `}>{product.price}$</span> : <span></span>}
 
 
           <div className={`col-lg-6 col-12 d-flex justify-content-between gap-md-3 gap-2`}>
-           <img className={`${style.mainImg}`} src={displayImg} />
-           
+            <img className={`${style.mainImg}`} src={displayImg} />
+
             <div className={` ${style.imgContainer} d-flex flex-column justify-content-start gap-md-3 gap-2`}>
 
               <button onClick={() => setDisplayImg(product.mainImage.secure_url)} className={`${style.imgButton}`} >
@@ -77,7 +111,7 @@ function Product() {
           {
             <div className={` d-flex col-lg-6 col-12 flex-column color1 justify-content-between  gap-3 flex-wrap ${style.card} `}>
 
-              <div  className={` d-flex flex-column gap-5 `}>
+              <div className={` d-flex flex-column gap-5 `}>
 
                 <div className={` d-flex flex-column gap-3`}>
 
@@ -118,7 +152,7 @@ function Product() {
                 <p className={`CrimsonTextFont `} > {product.description}</p>
 
               </div>
-              <button className={`CrimsonTextFont ${style.shopButton} `}> Shop Now |  <span> {product.finalPrice}$</span> </button>
+              <button onClick={() => addToCart(product._id)} className={`CrimsonTextFont ${style.shopButton} `}> Shop Now |  <span> {product.finalPrice}$</span> </button>
 
             </div>
 

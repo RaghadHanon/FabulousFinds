@@ -37,7 +37,7 @@ function CategoriesSection() {
       setError('');
       console.log(data.categories);
     } catch {
-      setError('can not load data!')
+      toast.error(error.response.data.message);
     } finally {
       setLoader(false);
     }

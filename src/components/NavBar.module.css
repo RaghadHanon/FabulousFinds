@@ -1,12 +1,12 @@
 .NavLogo {
   width: 60px;
 }
+
 .dropdownItem{
   text-decoration: none;
   color: var(--color1);
   text-align: center;
   width: 100%;
-  cursor: pointer;
 }
 .NavStyle {
   background-color: var(--color1) !important;
