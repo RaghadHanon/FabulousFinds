@@ -104,24 +104,24 @@ function Cart() {
   if (loader) return <Loader />;
 
   return (
-    <div>
-      <div className={` ${style.cont} d-flex flex-wrap justufy-content-between`}>
-        <div className={`d-flex flex-column gap-5`}>
+    <div className={`d-flex flex-wrap justify-content-center py-5`}>
+      <div className={` ${style.MyContainer} d-flex flex-wrap justify-content-between `}>
+        <div className={`${style.box} ${style.cart} p-5 d-flex flex-column gap-5`}>
           <h1 className={`DancingScriptFont color1`}>My cart</h1>
           <div className={`d-flex flex-column gap-4`}>
             {cartProducts.map((product) =>
               updateCart ? (
                 <Loader />
               ) : (
-                <div key={product.productId} className={`d-flex flex-wrap justufy-content-between  gap-5 ${style.cartItem}`}>
-                  <div className={`d-flex justify-content-start align-self-stretch gap-3 col-8`}>
+                <div key={product.productId} className={`d-flex flex-wrap justify-content-between   p-4 ${style.cartItem}`}>
+                  <div className={`d-flex justify-content-start align-self-stretch gap-3 col-8 `}>
                     <img
                       src={product.details.mainImage.secure_url}
                       alt={product.details.name}
                     />
-                    <div className={`d-flex flex-column justify-content-between  `}>
-                      <h3>{product.details.name}</h3>
-                      <div onClick={() => removeItem(product.productId)}>
+                    <div className={`d-flex flex-column justify-content-between  py-1`}>
+                      <h3 className={`CrimsonTextFont color1 text-capitalize fw-semibold`}>{product.details.name}</h3>
+                      <div onClick={() => removeItem(product.productId)} className={`CrimsonTextFont d-flex  gap-3 align-items-center color1 fw-semibold  `}>
                         <i
                           className="fa-solid fa-xmark"
                           style={{ color: "#67729d" }}
@@ -130,11 +130,11 @@ function Cart() {
                       </div>
                     </div>
                   </div>
-                  <div className={`d-flex align-self-stretch gap-3`}>
-                    <div className={`d-flex flex-column gap-5`}>
-                      <div className={`d-flex flex-wrap justufy-content-between gap-5 `}>
+                  <div className={`d-flex align-self-stretch gap-3 col-3 ps-3 border-start border-secondary-subtle`}>
+                    <div className={`d-flex flex-column align-self-stretch justify-content-between w-100`}>
+                      <div className={`d-flex justify-content-between gap-2  `}>
                         <span>Quantity</span>
-                        <div className={`d-flex flex-wrap justufy-content-between align-items-center gap-2`}>
+                        <div className={`d-flex flex-wrap justify-content-between align-items-center gap-2`}>
                           <i
                             onClick={() => increaseQuantity(product.productId)}
                             className="fa-solid fa-plus"
@@ -148,11 +148,11 @@ function Cart() {
                           ></i>
                         </div>
                       </div>
-                      <div>
+                      <div className={`d-flex justify-content-between gap-2  `}>
                         <span>Price</span>
                         <span>{product.details.finalPrice}</span>
                       </div>
-                      <div>
+                      <div className={`d-flex justify-content-between gap-2  `}>
                         <span>Subtotal</span>
                         <span>{product.quantity * product.details.price}</span>
                       </div>
@@ -163,8 +163,8 @@ function Cart() {
             )}
           </div>
         </div>
-        <div>
-          <h1 className={`DancingScriptFont color1`}>Cart Summary</h1>
+        <div className={`${style.box} ${style.summary}  p-4  d-flex flex-column gap-5`}>
+          <h3 className={`DancingScriptFont color1`}>Cart Summary</h3>
           <div>
             <div>
               <span>Free shipping</span>
