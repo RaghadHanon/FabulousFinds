@@ -101,6 +101,25 @@ function Cart() {
 
   };
 
+  const clearCart = async () => {
+    setUpdateCart(true);
+    try {
+      const { data } = await axios.patch(
+        `${import.meta.env.VITE_API}/cart/clear`,
+        {
+          headers: {
+            Authorization: `Tariq__${token}`,
+          },
+        }
+      );
+    } catch (error) {
+      toast.error(error.response.data.message);
+    } finally {
+      setUpdateCart(false);
+    }
+
+  };
+
   if (loader) return <Loader />;
 
   return (
@@ -162,6 +181,8 @@ function Cart() {
               )
             )}
           </div>
+          <button className={`CrimsonTextFont fw-semibold align-self-end`} onClick={clearCart} >Clear Cart</button>
+        
         </div>
         <div className={`${style.box} ${style.summary}   p-4  d-flex flex-column gap-5`}>
           <h3 className={`DancingScriptFont color1`}>Cart Summary</h3>

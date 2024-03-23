@@ -44,7 +44,7 @@ img {
   color: #9a9999;
 }
 
-.summary button{
+button{
   height: 45px;
   background-color: var(--color1);
   color: #fff;
@@ -52,6 +52,10 @@ img {
   border-radius: 5px;
 }
 
+.cart button{
+  width: 200px;
+  border-radius: 6px;
+}
 
 @media screen and (max-width:1025px) {
   
