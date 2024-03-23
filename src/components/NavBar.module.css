@@ -22,3 +22,19 @@
 .navbarToggler:focus {
   box-shadow: 0px 0px 3px var(--color4) !important;
 }
+
+.userImage{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.cartCount{
+  top:2px;
+  right:47px;
+  background-color: var(--color4);
+  width: 17px;
+  height: 17px;
+  font-size: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--color1);
+}

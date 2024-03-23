@@ -59,7 +59,7 @@ function ResetPassword() {
             <label htmlFor='code' className={`color1 fw-semibold CrimsonTextFont`}>Code</label>
             <input type='text' id='code' name='code' value={user.code} onChange={handleChange} className={`${style.inputStyle}`} required></input>
           </div>
-          <input className={`bgcolor1 CrimsonTextFont fw-semibold whiteC p-2 mt-4 ${style.submit}`} type='submit' disabled={loader ? 'disabled' : null} value="Submit"></input>
+          <input className={`bgcolor1 CrimsonTextFont fw-semibold whiteC p-2 mt-4 ${style.submit}`} type='submit' disabled={loader ? 'disabled' : null} value="Reset"></input>
         </form>
 
       </div>

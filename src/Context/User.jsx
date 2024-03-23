@@ -1,5 +1,8 @@
 import React, {useState, useEffect,createContext } from 'react'
 import { jwtDecode } from "jwt-decode";
+import axios from 'axios';
+
+
 export const UserContext = createContext();
 
 const UserContextProvider = ({children})=> {
@@ -7,13 +10,20 @@ const UserContextProvider = ({children})=> {
   const [User,setUser] = useState(null);
   const [loggedIn ,setLoggedIn]=useState(false);
 
-  const getUserData = ()=>{
-      let decoded =null;
+  const getUserData =async ()=>{
       if(userToken != null){
-        decoded =jwtDecode(userToken);
+        
+        const { data } = await axios.get(`${import.meta.env.VITE_API}/user/profile`,{
+          headers:{
+            Authorization:`Tariq__${userToken}`,
+          }
+        });
+
         setLoggedIn(true);
+        setUser(data.user);   
       }
-      setUser(decoded);
+      else setUser(null);
+      
   };
   useEffect(()=> {
     getUserData();

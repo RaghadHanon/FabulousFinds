@@ -1,0 +1,54 @@
+.CreateOrder {
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  animation: move 1.2s;
+
+  width: 45%;
+}
+@keyframes move {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.inputStyle {
+  border: 0;
+  border-bottom: 2px solid var(--color1);
+}
+.inputStyle:focus {
+  outline: none;
+}
+.submit {
+  border: 0px;
+}
+.submit:disabled {
+  opacity: 70%;
+}
+
+@media screen and (max-width: 1025px) {
+  .CreateOrder {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .CreateOrder {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .CreateOrder {
+    border-radius: 6px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .CreateOrder {
+    width: 100%;
+  }
+}

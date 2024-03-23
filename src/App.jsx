@@ -11,6 +11,7 @@ import CategoryProducts from "./Pages/Products/Components/CategoryProducts.jsx";
 import Categories from "./Pages/Categories/Components/Categories.jsx";
 import Product from "./components/Product.jsx";
 import Cart from "./Pages/Cart/Components/Cart.jsx";
+import CreateOrder from './Pages/Cart/Components/CreateOrder';
 import Login from "./Pages/Login/Components/Login.jsx";
 import SendCode from "./Pages/Login/Components/SendCode.jsx";
 import ResetPassword from "./Pages/Login/Components/ResetPassword.jsx";
@@ -19,7 +20,11 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoutes from "./auth/ProtectedRoutes.jsx";
 import UserContextProvider from "./Context/User.jsx";
+import CartContextProvider from "./Context/CartContext.jsx"
 import Profile from "./Pages/Profile/Components/Profile.jsx";
+import Orders from "./Pages/Profile/Components/Orders.jsx";
+import Info from "./Pages/Profile/Components/Info.jsx";
+import Contact from "./Pages/Profile/Components/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -52,8 +57,10 @@ const router = createBrowserRouter([
             <Cart />
           </ProtectedRoutes>
         ),
-      },
-      {
+      }, {
+        path: '/CreateOreder',
+        element: <CreateOrder />
+      }, {
         path: "/Login",
         element: <Login />,
       },
@@ -80,6 +87,20 @@ const router = createBrowserRouter([
             <Profile />
           </ProtectedRoutes>
         ),
+        children: [
+          {
+            path: "/Profile/Orders",
+            element: <Orders />,
+          },
+          {
+            path: "/Profile/Info",
+            element: <Info />,
+          },
+          {
+            path: "/Profile/Contact",
+            element: <Contact />,
+          }
+        ]
       },
     ],
   },
@@ -89,7 +110,9 @@ function App() {
   return (
     <>
       <UserContextProvider>
-        <RouterProvider router={router} />
+        <CartContextProvider>
+          <RouterProvider router={router} />
+        </CartContextProvider>
       </UserContextProvider>
       <ToastContainer />
     </>
