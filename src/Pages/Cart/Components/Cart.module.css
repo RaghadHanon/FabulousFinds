@@ -20,6 +20,8 @@
 
 .summary {
   width: 23%;
+  position: sticky !important;
+  top: 100px  !important;
 }
 
 .cartItem {
@@ -59,6 +61,7 @@ img {
 }
 .summary {
   width: 27%;
+  
 }
 }
 

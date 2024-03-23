@@ -105,7 +105,7 @@ function Cart() {
 
   return (
     <div className={`d-flex flex-wrap justify-content-center py-5`}>
-      <div className={` ${style.MyContainer} d-flex flex-wrap justify-content-lg-between align-items-lg-start align-items-center row-gap-5 flex-lg-row flex-column`}>
+      <div className={` ${style.MyContainer} d-flex flex-wrap justify-content-lg-between align-items-lg-start align-items-center row-gap-5 flex-lg-row flex-column position-relative top-0 `}>
         <div className={`${style.box} ${style.cart} d-flex flex-column gap-5 `}>
           <h1 className={`DancingScriptFont color1`}>My cart</h1>
           <div className={`d-flex flex-column gap-4`}>
