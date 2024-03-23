@@ -10,6 +10,7 @@
 
 .cart {
   width: 75%;
+  padding: 50px;
 }
 .MyContainer h1 {
   font-size: 55px;
@@ -48,3 +49,117 @@ img {
   border: 0px;
   border-radius: 5px;
 }
+
+
+@media screen and (max-width:1025px) {
+  
+
+.cart {
+  width: 70%;
+}
+.summary {
+  width: 27%;
+}
+}
+
+
+
+
+@media screen and (max-width:993px) {
+  
+  .cartItem h3 {
+    font-size: 18px;
+  }
+  .cart {
+    width: 80%;
+  }
+  .summary {
+    width: 80%;
+  }
+  }
+
+
+  
+@media screen and (max-width:900px) {
+  
+  .cartItem h3 {
+    font-size: 18px;
+  }
+  .cart {
+    width: 100%;
+  }
+  .summary {
+    width: 100%;
+  }
+  }
+
+
+  
+  
+@media screen and (max-width:770px) {
+  
+  .cartItem h3 {
+    font-size: 16px;
+  }
+  .MyContainer h1 {
+    font-size: 45px;
+  
+  }
+  
+  }
+
+  
+  
+@media screen and (max-width:577px) {
+  
+  .cartItem .borders{
+    border-left: 0 !important;
+    border-top: 1px solid rgb(196, 200, 203) !important;
+    padding-top: 10px;
+  }
+  img {
+    width: 30%;
+  }
+  
+  }
+
+
+
+    
+@media screen and (max-width:500px) {
+  .cartItem h3 {
+    font-size: 18px;
+  }
+  .cartItem span {
+    font-size: 15px;
+  }
+  
+  }
+
+  
+    
+@media screen and (max-width:430px) {
+  .cartItem h3 {
+    font-size: 16px;
+  }
+  .cartItem span {
+    font-size: 14px;
+  }
+  .cart {
+    padding: 40px;
+  }
+  .MyContainer h1 {
+    font-size: 35px;
+  
+  }
+  
+  }
+
+
+  @media screen and (max-width:400px) {
+    .cart {
+      width: 100%;
+      padding: 30px;
+    }
+    
+    }

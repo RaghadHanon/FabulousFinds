@@ -21,7 +21,7 @@ function Cart() {
       });
       setCartProducts(data.products);
 
-      let sum = 0;
+      let sum = 15;
       data.products.map((product) => {
         sum += (product.quantity * product.details.finalPrice);
       });
@@ -105,21 +105,21 @@ function Cart() {
 
   return (
     <div className={`d-flex flex-wrap justify-content-center py-5`}>
-      <div className={` ${style.MyContainer} d-flex flex-wrap justify-content-between `}>
-        <div className={`${style.box} ${style.cart} p-5 d-flex flex-column gap-5`}>
+      <div className={` ${style.MyContainer} d-flex flex-wrap justify-content-lg-between align-items-lg-start align-items-center row-gap-5 flex-lg-row flex-column`}>
+        <div className={`${style.box} ${style.cart} d-flex flex-column gap-5 `}>
           <h1 className={`DancingScriptFont color1`}>My cart</h1>
           <div className={`d-flex flex-column gap-4`}>
             {cartProducts.map((product) =>
               updateCart ? (
                 <Loader />
               ) : (
-                <div key={product.productId} className={`d-flex flex-wrap justify-content-between   p-4 ${style.cartItem}`}>
-                  <div className={`d-flex justify-content-start align-self-stretch gap-3 col-8 `}>
+                <div key={product.productId} className={`d-flex flex-sm-row flex-column row-gap-3 justify-content-between   p-md-4 p-3 ${style.cartItem}`}>
+                  <div className={`d-flex justify-content-start align-self-stretch gap-3 col-xl-8 col-sm-7 col-12 `}>
                     <img
                       src={product.details.mainImage.secure_url}
                       alt={product.details.name}
                     />
-                    <div className={`d-flex flex-column justify-content-between  py-1`}>
+                    <div className={`d-flex flex-column justify-content-around`}>
                       <h3 className={`CrimsonTextFont color1 text-capitalize fw-semibold`}>{product.details.name}</h3>
                       <div onClick={() => removeItem(product.productId)} className={` d-flex  gap-3 align-items-center CrimsonTextFont color1 fw-semibold  `}>
                         <i
@@ -130,7 +130,7 @@ function Cart() {
                       </div>
                     </div>
                   </div>
-                  <div className={`d-flex align-self-stretch gap-3 col-3 ps-3 border-start border-secondary-subtle`}>
+                  <div className={`${style.borders} d-flex align-self-stretch gap-3 col-xl-3 col-sm-4  ps-3 border-start  border-secondary-subtle`}>
                     <div className={`d-flex flex-column align-self-stretch justify-content-between w-100 row-gap-2`}>
                       <div className={`d-flex justify-content-between gap-2 flex-wrap row-gap-2 `}>
                         <span className={`CrimsonTextFont color1 fw-semibold`}>Quantity</span>
@@ -163,7 +163,7 @@ function Cart() {
             )}
           </div>
         </div>
-        <div className={`${style.box} ${style.summary}  p-4  d-flex flex-column gap-5`}>
+        <div className={`${style.box} ${style.summary}   p-4  d-flex flex-column gap-5`}>
           <h3 className={`DancingScriptFont color1`}>Cart Summary</h3>
           <div className={` d-flex flex-column justify-content-between gap-4`}>
             <div className={`${style.summDiv} d-flex justify-content-between align-items-center px-3 CrimsonTextFont fw-semibold `}>
