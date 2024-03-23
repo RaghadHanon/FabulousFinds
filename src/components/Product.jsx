@@ -85,18 +85,20 @@ function Product() {
           {product.discount != 0 ? <span className={`text-decoration-line-through position-absolute CrimsonTextFont ${style.discount} `}>{product.price}$</span> : <span></span>}
 
 
-          <div className={`col-lg-6 col-12 d-flex justify-content-between gap-md-3 gap-2`}>
-            <img className={`${style.mainImg}`} src={displayImg} />
+          <div className={`col-lg-6 col-12 d-flex flex-sm-row flex-column justify-content-between gap-md-3 gap-2`}>
+            <div className={`${style.mainImg}  d-flex flex-column justify-content-md-start  justify-content-center`}>
+              <img  src={displayImg} />
+            </div>
 
-            <div className={` ${style.imgContainer} d-flex flex-column justify-content-start gap-md-3 gap-2`}>
+            <div className={` ${style.imgContainer} d-flex flex-sm-column justify-content-start gap-md-3 gap-2 `}>
 
               <button onClick={() => setDisplayImg(product.mainImage.secure_url)} className={`${style.imgButton}`} >
                 <img className={`${style.imgStyle}`} src={product.mainImage.secure_url} />
               </button>
               {
 
-                product.subImages.map(category =>
-                  <button onClick={() => setDisplayImg(category.secure_url)} className={`${style.imgButton}`}>
+                product.subImages.map((category,index) =>
+                  <button key={index} onClick={() => setDisplayImg(category.secure_url)} className={`${style.imgButton}`}>
                     <img className={`${style.imgStyle}`} src={category.secure_url} />
                   </button>
 

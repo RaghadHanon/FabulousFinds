@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./Cart.module.css";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 import { toast } from "react-toastify";
 import Loader from "../../../components/Loader";
@@ -107,6 +108,9 @@ function Cart() {
       const { data } = await axios.patch(
         `${import.meta.env.VITE_API}/cart/clear`,
         {
+
+        },
+        {
           headers: {
             Authorization: `Tariq__${token}`,
           },
@@ -127,7 +131,9 @@ function Cart() {
       <div className={` ${style.MyContainer} d-flex flex-wrap justify-content-lg-between align-items-lg-start align-items-center row-gap-5 flex-lg-row flex-column position-relative top-0 `}>
         <div className={`${style.box} ${style.cart} d-flex flex-column gap-5 `}>
           <h1 className={`DancingScriptFont color1`}>My cart</h1>
-          <div className={`d-flex flex-column gap-4`}>
+          {
+          cartProducts.length > 0 ?
+          <><div className={`d-flex flex-column gap-4`}>
             {cartProducts.map((product) =>
               updateCart ? (
                 <Loader />
@@ -138,9 +144,9 @@ function Cart() {
                       src={product.details.mainImage.secure_url}
                       alt={product.details.name}
                     />
-                    <div className={`d-flex flex-column justify-content-around`}>
+                    <div className={`d-flex flex-column justify-content-between`}>
                       <h3 className={`CrimsonTextFont color1 text-capitalize fw-semibold`}>{product.details.name}</h3>
-                      <div onClick={() => removeItem(product.productId)} className={` d-flex  gap-3 align-items-center CrimsonTextFont color1 fw-semibold  `}>
+                      <div onClick={() => removeItem(product.productId)} className={` d-flex  gap-sm-3 gap-1 align-items-center CrimsonTextFont color1 fw-semibold  `}>
                         <i
                           className="fa-solid fa-xmark"
                           style={{ color: "#67729d" }}
@@ -181,8 +187,9 @@ function Cart() {
               )
             )}
           </div>
+          
+          </>  : <NavLink to='/products' className={`CrimsonTextFont fw-semibold whiteC p-2  text-decoration-none bgcolor1`}> Add some products !</NavLink> }
           <button className={`CrimsonTextFont fw-semibold align-self-end`} onClick={clearCart} >Clear Cart</button>
-        
         </div>
         <div className={`${style.box} ${style.summary}   p-4  d-flex flex-column gap-5`}>
           <h3 className={`DancingScriptFont color1`}>Cart Summary</h3>

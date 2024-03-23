@@ -23,7 +23,10 @@
 
 .mainImg {
   width: 80%;
-  height: 538.5px;
+}
+
+.mainImg img{
+  width:100%;
   border: 1px solid rgb(215, 215, 215);
 }
 
@@ -124,7 +127,7 @@
 }
 
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:576px) {
 
   .box {
     padding: 4% ;
@@ -140,5 +143,24 @@
   .title {
     font-size: 27px;
   }
+  
+.imgContainer {
+  width: 100%;
+}
+
+.imgStyle {
+  width: 100%;
+  border: 1px solid rgb(215, 215, 215);
+}
+
+.mainImg {
+  width: 100%;
+}
+
+.mainImg img{
+  width:100%;
+  border: 1px solid rgb(215, 215, 215);
+}
+
 
 }
