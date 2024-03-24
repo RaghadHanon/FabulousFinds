@@ -75,14 +75,13 @@ function Orders() {
   if (loader) return <Loader />;
 
   return (
-    <div className={` d-flex flex-column gap-5`}>
-      <h2 className={`DancingScriptFont color1`}>My Orders</h2>
+    <div className={` d-flex flex-column gap-3 `}>
       {orders.length > 0 ?
 
         orders.map(order => (
           <>
             {order.products.length > 0 ?
-              <div className={`border border-2 rounded-1  border-secondary-subtle p-4 d-flex  justify-content-lg-between align-items-lg-start align-items-center gap-4 row-gap-5 flex-lg-row flex-column  `}>
+              <div className={`border border-2 rounded-1 bgwhiteC  border-secondary-subtle p-4 d-flex  justify-content-lg-between align-items-lg-start align-items-center gap-4 row-gap-5 flex-lg-row flex-column  `}>
 
                 <div key={order._Id} className={`${style.order} d-flex flex-column gap-4`}>
                   {order.products.map((product) => (
@@ -127,7 +126,7 @@ function Orders() {
                   <div className={` d-flex flex-column gap-4`}>
 
                     <div className={`border-bottom  p-2  color1 row-gap-2 d-flex flex-wrap justify-content-between align-items-center CrimsonTextFont fw-bolder`}>
-                      <span >Total :</span>
+                      <span >Total</span>
                       <span>$ {Math.round(order.finalPrice)}</span>
                     </div>
                     <div className={`border-bottom  p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder`}>
@@ -162,7 +161,7 @@ function Orders() {
         ))
 
 
-        : <span className={`CrimsonTextFont color1 fs-5`}> No orders yet</span>
+        : <span className={`CrimsonTextFont whiteC fs-5`}> No orders yet</span>
       }
     </div>
 

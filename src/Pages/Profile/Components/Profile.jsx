@@ -28,18 +28,18 @@ function Profile() {
 
         </div>
 
-        <div className={`${style.box} ${style.page} d-flex flex-column gap-5 `}>
+        <div className={`${style.box} ${style.page} d-flex flex-column gap-5 bgcolor1 `}>
 
           <div className={`border-bottom `}>
             <ul className={`d-flex justify-content-center gap-5 ps-0`}>
               <li onClick={()=>setActive(1)}>
-                  <NavLink className={`text-decoration-none fs-5  CrimsonTextFont  color1 ${location.pathname.includes('Orders') ? 'fw-semibold': ''} `} to="/Profile/Orders" >Orders</NavLink>
+                  <NavLink className={`text-decoration-none fs-5  CrimsonTextFont  whiteC ${location.pathname.includes('Orders') ? 'fw-semibold': ''} `} to="/Profile/Orders" >Orders</NavLink>
               </li>
               <li onClick={()=>setActive(2) }>
-                  <NavLink className={`text-decoration-none fs-5  CrimsonTextFont  color1  ${location.pathname.includes('Info') ? 'fw-semibold': ''}`} to="/Profile/Info" >Info</NavLink>
+                  <NavLink className={`text-decoration-none fs-5  CrimsonTextFont  whiteC  ${location.pathname.includes('Info') ? 'fw-semibold': ''}`} to="/Profile/Info" >Info</NavLink>
               </li>
               <li onClick={()=>setActive(3)}>
-                  <NavLink className={`text-decoration-none fs-5  CrimsonTextFont  color1  ${location.pathname.includes('Contact') ? 'fw-semibold': ''}`} to= "/Profile/Contact" >Contact</NavLink>
+                  <NavLink className={`text-decoration-none fs-5  CrimsonTextFont  whiteC  ${location.pathname.includes('Contact') ? 'fw-semibold': ''}`} to= "/Profile/Contact" >Contact</NavLink>
               </li>
             </ul>
           </div>

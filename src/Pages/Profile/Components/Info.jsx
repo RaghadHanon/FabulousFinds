@@ -9,8 +9,8 @@ function Info() {
 
   return (
     <div className={`color1 d-flex flex-wrap align-items-center gap-5 CrimsonTextFont fs-6`}>
-      <span className={` fw-bolder`}>User Name</span>
-      <span className={`border flex-grow-1 fw-semibold  px-3 py-1`}>{User.userName}</span>
+      <span className={` fw-bolder whiteC`}>User Name</span>
+      <span className={`border flex-grow-1 fw-semibold  px-3 py-1 whiteC`}>{User.userName}</span>
     </div>
   )
 }
