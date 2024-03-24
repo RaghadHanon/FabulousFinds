@@ -106,7 +106,17 @@ function Product() {
       }
     } else {
 
-      toast.error('Please Login to your account first')
+      toast.error('Please Login to your account first', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     }
 
   }

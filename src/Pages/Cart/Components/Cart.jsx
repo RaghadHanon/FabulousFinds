@@ -214,7 +214,7 @@ function Cart() {
             <span>Total</span>
             <span>$ {Math.round(totalCartPrice)}</span>
           </div>
-          <NavLink className={`CrimsonTextFont fw-semibold whiteC  text-decoration-none`} to='/CreateOreder' ><button className={`CrimsonTextFont fw-semibold w-100`} >Checkout</button></NavLink>
+          {cartProducts.length >0 ? <NavLink className={`CrimsonTextFont fw-semibold whiteC  text-decoration-none`} to='/CreateOreder' ><button className={`CrimsonTextFont fw-semibold w-100`} >Checkout</button></NavLink> :<></>}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import style from './CreateOrder.module.css'
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { Bounce,toast } from 'react-toastify';
 import { NavLink, useNavigate } from 'react-router-dom'
 
 
@@ -25,17 +25,27 @@ function CreateOrder() {
     e.preventDefault();
     setLoader(true);
     try{
-      const { data } = await axios.patch(`${import.meta.env.VITE_API}/order`, order,{
+      const { data } = await axios.post(`${import.meta.env.VITE_API}/order`, order,{
         headers:{
           Authorization:`Tariq__${localStorage.getItem('userToken')}`,
         }
       });
       setOrder({ couponName: '', address: '' ,phone:''});
-      toast('Order Confirmed successfully!');
-      //navigate('/Orders')
+      toast('Order Confirmed successfully!', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+      navigate('/Profile/Orders')
     }
     catch(error){
-      toast.error(error.response.data.message);
+      toast.error(error.response.message);
     }finally{
       setLoader(false);
     }
