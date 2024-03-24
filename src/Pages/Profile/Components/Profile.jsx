@@ -14,7 +14,7 @@ function Profile() {
 
   return (
     <div className={`d-flex flex-wrap justify-content-center py-5`}>
-      <div className={` ${style.MyContainer} d-flex flex-wrap justify-content-between  row-gap-5 flex-column position-relative top-0 `}>
+      <div className={` ${style.MyContainer} d-flex flex-wrap justify-content-between  row-gap-3 flex-column position-relative top-0 `}>
 
         <div className={`${style.box} ${style.profileBox}  d-flex align-items-center`}>
           <span className={` ${style.rect} bgcolor1  position-relative top-0`} ></span>

@@ -20,7 +20,6 @@ function CreateOrder() {
       [name]: value,
     })
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(true);

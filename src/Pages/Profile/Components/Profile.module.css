@@ -5,7 +5,7 @@
 .box {
   border-radius: 6px;
   background: #fff;
-  box-shadow: 0px 0px 5px 0px rgba(134, 134, 134, 0.25);
+  box-shadow: 0px 0px 5px 0px rgb(180, 180, 180);
 }
 .profileBox{
   height: 220px;
@@ -47,16 +47,11 @@
 
 
 
-
-@media screen and (max-width:993px) {
-  
- 
-  .page {
-    width: 80%;
-  }
-  }
-
-
+@media screen and (max-width:1030px) {
+.MyContainer {
+  width: calc(90% - 1rem);
+}
+}
   
 @media screen and (max-width:900px) {
  
@@ -86,6 +81,12 @@
      
     }
   }
+
+  @media screen and (max-width:600px) {
+    .MyContainer {
+      width: calc(96% - 1rem);
+    }
+    }
 
     
 @media screen and (max-width:430px) {

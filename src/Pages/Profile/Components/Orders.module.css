@@ -11,14 +11,9 @@
   font-weight: 700;
 }
 
-.order {
-  width: 75%;
-}
 .summary {
   width: 23%;
   border: 1px solid #d0d0d0;
-  position: sticky;
-  top:100px;
 }
 
 .cartItem {
@@ -55,9 +50,6 @@
   
   .cartItem h3 {
     font-size: 18px;
-  }
-  .order {
-    width: 100%;
   }
   .summary {
     width: 100%;
@@ -124,10 +116,10 @@
     
 @media screen and (max-width:430px) {
   .cartItem h3 {
-    font-size: 17px;
+    font-size: 18px;
   }
   .cartItem span {
-    font-size: 14px;
+    font-size: 15px;
   }
   .orderList {
     padding: 40px;
