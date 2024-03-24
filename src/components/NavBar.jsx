@@ -64,11 +64,12 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <NavLink
-                className={`nav-link fs-6 crushedFont  color4 letterSpace position-relative top-0`}
+                className={`nav-link fs-6 crushedFont  color4 letterSpace d-flex gap-2`}
                 to="/Cart"
               >
+                <div className={`position-relative top-0`}>
                 <svg
-                  className={`me-3 ${style.cartIcon} `}
+                  className={`me-3 ${style.cartIcon}  `}
                   xmlns="http://www.w3.org/2000/svg"
                   height="23"
                   width="24.75"
@@ -81,7 +82,7 @@ function NavBar() {
                
                 </svg>
                 {loggedIn? <span className={`${style.cartCount} position-absolute text-center color1 fw-bolder  `}>{CartItemsCount}</span>:<></>}
-
+                </div>
                 {" "}
                 Cart
               </NavLink>
@@ -90,7 +91,7 @@ function NavBar() {
 
           <ul className="navbar-nav  align-self-end gap-2">
             {loggedIn ? (
-              <li className="nav-item dropdown d-flex justify-content-between align-items-center">
+              <li className="nav-item dropdown d-flex mt-sm-1 justify-content-start gap-2 align-items-sm-center">
                 <img
                   src={User.image.secure_url}
                   className={`${style.userImage}`}
@@ -104,10 +105,10 @@ function NavBar() {
                 >
                   {User.userName}
                 </a>
-                <ul className="dropdown-menu ">
+                <ul className="dropdown-menu bgcolor1 border-0  ">
                   <li className={`${style.dropdownItem}`}>
                     <NavLink
-                      className={`${style.dropdownItem} w-100 fs-6  crushedFont   letterSpace`}
+                      className={`${style.dropdownItem} color4  fs-6  crushedFont   letterSpace`}
                       to="/Profile/Orders"
                     >
                       Profile
@@ -118,7 +119,7 @@ function NavBar() {
                   </li>
                   <li className={`${style.dropdownItem}`}>
                     <NavLink
-                      className={`${style.dropdownItem} w-100 fs-6  crushedFont   letterSpace`}
+                      className={`${style.dropdownItem} color4 fs-6  crushedFont   letterSpace`}
                       onClick={logOut}
                     >
                       Log out

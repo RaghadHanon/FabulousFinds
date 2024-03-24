@@ -4,7 +4,7 @@ import axios from 'axios';
 import {NavLink,useNavigate} from 'react-router-dom'
 
 
-import { toast } from 'react-toastify';
+import {Bounce, toast } from 'react-toastify';
 
 function Signup() {
   
@@ -43,11 +43,31 @@ function Signup() {
     try{
       const {data} = await axios.post(`${import.meta.env.VITE_API}/auth/signup`,formData);
       e.target.reset();
-      toast.success('Your account has been created successfully!');
+      toast.success('Your account has been created successfully!', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
       navigate('/Login')
     }
     catch(error){
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     }finally{
       setLoader(false);
     }

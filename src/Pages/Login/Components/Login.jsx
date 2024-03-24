@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import style from './login.module.css'
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import {Bounce ,toast } from 'react-toastify';
 import {NavLink,useNavigate} from 'react-router-dom'
 import { UserContext } from '../../../Context/User';
 
@@ -30,11 +30,31 @@ function Login() {
       localStorage.setItem('userToken',data.token);
       setUser({ email: '', password: '' });
       setUserToken(data.token);
-      toast.success('login is successfull!');
+      toast.success('login is successfull!', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
       navigate('/')
     }
     catch(error){
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     }finally{
       setLoader(false);
     }

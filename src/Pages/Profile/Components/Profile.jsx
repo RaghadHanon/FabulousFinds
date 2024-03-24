@@ -18,11 +18,11 @@ function Profile() {
 
         <div className={`${style.box} ${style.profileBox}  d-flex align-items-center`}>
           <span className={` ${style.rect} bgcolor1  position-relative top-0`} ></span>
-          <div className={` ${style.Header} d-flex gap-5 align-items-center position-absolute `}>
-            <div className={`${style.imgContainer}   d-flex justify-content-center align-items-center bgcolor1 ms-5`}>
+          <div className={` ${style.Header} d-flex gap-sm-5 gap-1 align-items-center position-absolute `}>
+            <div className={`${style.imgContainer}   d-flex justify-content-center align-items-center bgcolor1 ms-sm-5 ms-2`}>
               <img className={`${style.userImage}`} src={User.image.secure_url} />
             </div>
-            <span className={`DancingScriptFont whiteC fs-1 text-capitalize `}>{User.userName}</span>
+            <span className={`DancingScriptFont whiteC fs-1 text-capitalize `}>{User.userName} Hanon</span>
           </div>
 
 
@@ -31,7 +31,7 @@ function Profile() {
         <div className={`${style.box} ${style.page} d-flex flex-column gap-5 `}>
 
           <div className={`border-bottom `}>
-            <ul className={`d-flex justify-content-center gap-5`}>
+            <ul className={`d-flex justify-content-center gap-5 ps-0`}>
               <li onClick={()=>setActive(1)}>
                   <NavLink className={`text-decoration-none fs-5  CrimsonTextFont  color1 ${location.pathname.includes('Orders') ? 'fw-semibold': ''} `} to="/Profile/Orders" >Orders</NavLink>
               </li>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import style from './ResetPassword.module.css'
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import {Bounce, toast } from 'react-toastify';
 import { NavLink, useNavigate } from 'react-router-dom'
 
 function ResetPassword() {
@@ -27,11 +27,31 @@ function ResetPassword() {
       const { data } = await axios.patch(`${import.meta.env.VITE_API}/auth/forgotPassword`, user);
       localStorage.setItem('userToken',data.token);
       setUser({ email: '', password: '' ,code:''});
-      toast('Password reset successful!');
+      toast('Password reset successful!', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
       navigate('/Login')
     }
     catch(error){
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     }finally{
       setLoader(false);
     }

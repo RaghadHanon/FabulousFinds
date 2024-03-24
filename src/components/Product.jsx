@@ -5,7 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { UserContext } from '../Context/User'
 import style from './product.module.css'
 import { CartContext } from '../Context/CartContext'
-import { toast } from 'react-toastify';
+import { Bounce,toast } from 'react-toastify';
 import Loader from './Loader';
 
 function Product() {
@@ -35,7 +35,17 @@ function Product() {
       setRating(data.avgRating);
 
     } catch {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     }
     finally {
       setLoader(false);
@@ -64,12 +74,32 @@ function Product() {
           }
         });
 
-        toast.success('Product successfully added!');
+        toast.success('Product successfully added!', {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
         setCartItemsCount(CartItemsCount + 1);
 
 
       } catch (error) {
-        toast.error(error.response.data.message);
+        toast.error(error.response.data.message, {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
       }
       finally {
         setLoader(false);
@@ -103,7 +133,17 @@ function Product() {
         })
 
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.message, {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
     } finally {
       setLoader(false);
     }
@@ -121,7 +161,7 @@ function Product() {
   return (
     <>
       <div className={`container  `}>
-        <div className={`d-flex  flex-wrap row-gap-3 justify-content-between ${style.box} `}>
+        <div className={`d-flex  flex-wrap row-gap-3 justify-content-between ${style.box} position-relative`}>
           {product.discount != 0 ? <span className={`text-decoration-line-through position-absolute CrimsonTextFont ${style.discount} `}>{product.price}$</span> : <span></span>}
 
 

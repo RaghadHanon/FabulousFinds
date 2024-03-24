@@ -6,7 +6,6 @@
   text-decoration: none;
   color: var(--color1);
   text-align: center;
-  width: 100%;
 }
 .NavStyle {
   background-color: var(--color1) !important;
@@ -29,8 +28,8 @@
   border-radius: 50%;
 }
 .cartCount{
-  top:2px;
-  right:47px;
+  top:-7px;
+  right:4px;
   background-color: var(--color4);
   width: 17px;
   height: 17px;
