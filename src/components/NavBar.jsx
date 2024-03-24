@@ -80,7 +80,7 @@ function NavBar() {
                   />
                
                 </svg>
-                <span className={`${style.cartCount} position-absolute text-center color1 fw-bolder  `}>{CartItemsCount}</span>
+                {loggedIn? <span className={`${style.cartCount} position-absolute text-center color1 fw-bolder  `}>{CartItemsCount}</span>:<></>}
 
                 {" "}
                 Cart
