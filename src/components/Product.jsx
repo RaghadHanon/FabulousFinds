@@ -62,8 +62,6 @@ function Product() {
   const addToCart = async (productId) => {
 
     if (loggedIn) {
-
-
       const token = localStorage.getItem('userToken');
       try {
         const { data } = await axios.post(`https://ecommerce-node4.vercel.app/cart`, {
