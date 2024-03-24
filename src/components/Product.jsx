@@ -183,7 +183,7 @@ function Product() {
             <div className={` ${style.imgContainer} d-flex flex-sm-column justify-content-start gap-md-3 gap-2 `}>
 
               <button onClick={() => setDisplayImg(product.mainImage.secure_url)} className={`${style.imgButton}`} >
-                <img className={`${style.imgStyle}`} src={product.mainImage.secure_url} />
+                <img className={`${style.imgStyle}`} src={product.mainImage.secure_url}  />
               </button>
               {
 
