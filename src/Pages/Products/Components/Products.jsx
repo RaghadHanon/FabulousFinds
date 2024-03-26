@@ -25,8 +25,8 @@ function Products() {
       const { data } = await axios.get(
         `${import.meta.env.VITE_API}/products?page=${page}&limit=3&search=${
           filter.search
-        }&sort=${filter.sort} `
-      ); //&maxvalue=${filter.maxvalue}&minvalue=${filter.minvalue}`);
+        }&sort=${filter.sort}`)
+        //&price[lte]=${filter.maxvalue}&price[gte]=${filter.minvalue}`);
       setError("");
       setProducts(data.products);
       setPageNum(Math.ceil(data.total / 3));
