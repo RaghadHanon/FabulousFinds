@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useContext } from "react";
 import style from "./Orders.module.css";
 import axios from "axios";
@@ -6,8 +5,7 @@ import { NavLink } from "react-router-dom";
 
 import { Bounce, toast } from "react-toastify";
 import Loader from "../../../components/Loader";
-import { UserContext } from '../../../Context/User'
-
+import { UserContext } from "../../../Context/User";
 
 function Orders() {
   const [loader, setLoader] = useState(true);
@@ -44,16 +42,18 @@ function Orders() {
     getData();
   }, []);
 
-
-
   const cancelOrder = async (Id) => {
     setLoader(true);
     try {
-      const { data } = await axios.patch(`${import.meta.env.VITE_API}/order/cancel/${Id}`, {}, {
-        headers: {
-          Authorization: `Tariq__${token}`,
-        },
-      });
+      const { data } = await axios.patch(
+        `${import.meta.env.VITE_API}/order/cancel/${Id}`,
+        {},
+        {
+          headers: {
+            Authorization: `Tariq__${token}`,
+          },
+        }
+      );
       getData();
     } catch (error) {
       toast.error(error.response.message, {
@@ -70,105 +70,172 @@ function Orders() {
     } finally {
       setLoader(false);
     }
-
-  }
+  };
   if (loader) return <Loader />;
 
   return (
     <div className={` d-flex flex-column gap-3 `}>
-      {orders.length > 0 ?
-
-        orders.map(order => (
+      {orders.length > 0 ? (
+        orders.map((order) => (
           <>
-            {order.products.length > 0 ?
-              <div className={`border border-2 rounded-1 bgwhiteC  border-secondary-subtle p-4 d-flex  justify-content-lg-between align-items-lg-start align-items-center gap-4 row-gap-5 flex-lg-row flex-column  `}>
-
-                <div key={order._Id} className={`${style.order} d-flex flex-column gap-4 `}>
+            {order.products.length > 0 ? (
+              <div
+                className={`border border-2 rounded-1 bgwhiteC  border-secondary-subtle p-sm-4 p-1 d-flex  justify-content-lg-between align-items-lg-start align-items-center gap-4 row-gap-5 flex-lg-row flex-column  `}
+              >
+                <div
+                  key={order._Id}
+                  className={`${style.order} d-flex flex-column gap-sm-4 gap-1`}
+                >
                   {order.products.map((product) => (
-                    <div key={product.productId._id} className={`d-flex flex-sm-row flex-column row-gap-3 justify-content-between   p-md-4 p-3 ${style.cartItem}`}>
-                      <div className={`d-flex justify-content-start align-self-stretch gap-3 col-xl-8 col-sm-7 col-12 `}>
+                    <div
+                      key={product.productId._id}
+                      className={`d-flex flex-sm-row flex-column row-gap-3 justify-content-between   p-md-4 p-3 ${style.cartItem}`}
+                    >
+                      <div
+                        className={`d-flex justify-content-start align-self-stretch gap-3 col-xl-8 col-sm-7 col-12 `}
+                      >
                         <img
                           src={product.productId.mainImage.secure_url}
                           alt={product.productId.name}
                         />
-                        <div className={`d-flex flex-column justify-content-between`}>
-                            <h3 className={`CrimsonTextFont color1 text-capitalize fw-semibold`}>{product.productId.name}</h3>
+                        <div
+                          className={`d-flex flex-column justify-content-between`}
+                        >
+                          <h3
+                            className={`CrimsonTextFont color1 text-capitalize fw-semibold`}
+                          >
+                            {product.productId.name}
+                          </h3>
 
-                           
-                          <NavLink to={`/Products/${product.productId._id}`} className={`text-decoration-none CrimsonTextFont `}>View product
-                            </NavLink>
+                          <NavLink
+                            to={`/Products/${product.productId._id}`}
+                            className={`text-decoration-none CrimsonTextFont `}
+                          >
+                            View product
+                          </NavLink>
                         </div>
                       </div>
-                      <div className={`${style.borders} d-flex align-self-stretch gap-3 col-xl-3 col-sm-4  ps-3 border-start  border-secondary-subtle`}>
-                        <div className={`d-flex flex-column align-self-stretch justify-content-between w-100 row-gap-2`}>
-                          <div className={`d-flex justify-content-between gap-2 flex-wrap row-gap-2 `}>
-                            <span className={`CrimsonTextFont color1 fw-semibold`}>Quantity</span>
-                            <span className={`CrimsonTextFont color1 fw-semibold`}>{product.quantity}</span>
-
+                      <div
+                        className={`${style.borders} d-flex align-self-stretch gap-3 col-xl-3 col-sm-4  ps-3 border-start  border-secondary-subtle`}
+                      >
+                        <div
+                          className={`d-flex flex-column align-self-stretch justify-content-between w-100 row-gap-2`}
+                        >
+                          <div
+                            className={`d-flex justify-content-between gap-2 flex-wrap row-gap-2 `}
+                          >
+                            <span
+                              className={`CrimsonTextFont color1 fw-semibold`}
+                            >
+                              Quantity
+                            </span>
+                            <span
+                              className={`CrimsonTextFont color1 fw-semibold`}
+                            >
+                              {product.quantity}
+                            </span>
                           </div>
-                          <div className={`d-flex justify-content-between gap-2 flex-wrap row-gap-2 `}>
-                            <span className={`CrimsonTextFont color1 fw-semibold`}>Price</span>
-                            <span className={`CrimsonTextFont color1 fw-semibold`}>$ {product.unitPrice}</span>
+                          <div
+                            className={`d-flex justify-content-between gap-2 flex-wrap row-gap-2 `}
+                          >
+                            <span
+                              className={`CrimsonTextFont color1 fw-semibold`}
+                            >
+                              Price
+                            </span>
+                            <span
+                              className={`CrimsonTextFont color1 fw-semibold`}
+                            >
+                              $ {product.unitPrice}
+                            </span>
                           </div>
-                          <div className={`d-flex justify-content-between gap-2  flex-wrap row-gap-2`}>
-                            <span className={`CrimsonTextFont color1 fw-semibold`}>Subtotal</span>
-                            <span className={`CrimsonTextFont color1 fw-semibold`}>$ {product.finalPrice}</span>
+                          <div
+                            className={`d-flex justify-content-between gap-2  flex-wrap row-gap-2`}
+                          >
+                            <span
+                              className={`CrimsonTextFont color1 fw-semibold`}
+                            >
+                              Subtotal
+                            </span>
+                            <span
+                              className={`CrimsonTextFont color1 fw-semibold`}
+                            >
+                              $ {product.finalPrice}
+                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
+                  ))}
+                </div>
 
-                  )
-                  )}
-
-                </div >
-
-
-                <div className={` ${style.summary}  col-lg-4 p-4 align-self-stretch  d-flex justify-content-between flex-column gap-3`}>
-
+                <div
+                  className={` ${style.summary}  col-lg-4 p-4 align-self-stretch  d-flex justify-content-between flex-column gap-3`}
+                >
                   <div className={` d-flex flex-column gap-4`}>
-
-                    <div className={`border-bottom  p-2  color1 row-gap-2 d-flex flex-wrap justify-content-between align-items-center CrimsonTextFont fw-bolder`}>
-                      <span >Total</span>
+                    <div
+                      className={`border-bottom  p-2  color1 row-gap-2 d-flex flex-wrap justify-content-between align-items-center CrimsonTextFont fw-bolder`}
+                    >
+                      <span>Total</span>
                       <span>$ {Math.round(order.finalPrice)}</span>
                     </div>
-                    <div className={`border-bottom  p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder`}>
+                    <div
+                      className={`border-bottom  p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder`}
+                    >
                       <span>Address :</span>
                       <span>{order.address}</span>
                     </div>
-                    <div className={`border-bottom   p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder`}>
+                    <div
+                      className={`border-bottom   p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder`}
+                    >
                       <span>Phone Number :</span>
                       <span>{order.phoneNumber}</span>
                     </div>
-                    {order.couponName != '' ? <div className={` border p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}>
-                      <span>Coupon Name :</span>
-                      <span>{order.couponName}</span>
-                    </div>
-                      : <></>}
-                    <div className={`border-bottom  p-2 color1  row-gap-2  d-flex  flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}>
+                    {order.couponName != "" ? (
+                      <div
+                        className={` border p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}
+                      >
+                        <span>Coupon Name :</span>
+                        <span>{order.couponName}</span>
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                    <div
+                      className={`border-bottom  p-2 color1  row-gap-2  d-flex  flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}
+                    >
                       <span>Payment Type :</span>
                       <span>{order.paymentType}</span>
                     </div>
-                    <div className={`border-bottom  p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}>
+                    <div
+                      className={`border-bottom  p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}
+                    >
                       <span>Status :</span>
                       <span>{order.status}</span>
                     </div>
                   </div>
-                  {order.status != "pending" ? <></> :
-                    <button onClick={() => cancelOrder(order._id)} className={`CrimsonTextFont  fw-semibold w-100 mt-5`} >Cancel Order</button>}
+                  {order.status != "pending" ? (
+                    <></>
+                  ) : (
+                    <button
+                      onClick={() => cancelOrder(order._id)}
+                      className={`CrimsonTextFont  fw-semibold w-100 mt-5`}
+                    >
+                      Cancel Order
+                    </button>
+                  )}
                 </div>
               </div>
-              : <></>}
+            ) : (
+              <></>
+            )}
           </>
-
         ))
-
-
-        : <span className={`CrimsonTextFont whiteC fs-5`}> No orders yet</span>
-      }
+      ) : (
+        <span className={`CrimsonTextFont color1 fs-5`}> No orders yet</span>
+      )}
     </div>
-
-  )
+  );
 }
 
-export default Orders
+export default Orders;

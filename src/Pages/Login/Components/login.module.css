@@ -1,15 +1,15 @@
-.login{
+.login {
   border-radius: 6px 6px 6px 170px;
-background: #FFF;
-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
-.animation{
-  padding:50px;
+.animation {
+  padding: 50px;
   border-top-right-radius: 170px;
   border-bottom-left-radius: 170px;
-  animation: move 1.5s ease-out ;
+  animation: move 1.5s ease-out;
 }
-@keyframes move{
+@keyframes move {
   from {
     transform: translateX(100%);
     opacity: 0;
@@ -21,23 +21,21 @@ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   }
 }
 
-.inputStyle{
+.inputStyle {
   border: 0;
   border-bottom: 2px solid var(--color1);
 }
-.inputStyle:focus{
+.inputStyle:focus {
   outline: none;
 }
-.submit{
+.submit {
   border: 0px;
 }
-.submit:disabled{
+.submit:disabled {
   opacity: 70%;
 }
 
-
-@media screen and (max-width:1000px) {
-
+@media screen and (max-width: 1000px) {
   .animation {
     padding: 20px 0px 20px 30px;
 
@@ -46,8 +44,7 @@ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   }
 }
 
-
-@media screen and (max-width:760px) {
+@media screen and (max-width: 760px) {
   .login {
     border-radius: 6px;
   }
@@ -59,16 +56,15 @@ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
     border-bottom-right-radius: 6px;
   }
 
-  
-@keyframes move{
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
+  @keyframes move {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
 
-  to {
-    transform: translateY(0);
-    opacity: 1;
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
-}
 }

@@ -21,13 +21,12 @@
 .summary {
   width: 23%;
   position: sticky !important;
-  top: 100px  !important;
+  top: 100px !important;
 }
 
 .cartItem {
   border: 1px solid #d0d0d0;
 }
-
 
 .cartItem img {
   width: 20%;
@@ -36,20 +35,18 @@
   font-size: 20px;
 }
 
-.cursorPointer , .cartItem i{
+.cursorPointer,
+.cartItem i {
   cursor: pointer;
 }
-
 
 .cartItem a {
   color: rgb(148, 148, 148);
 }
 
-
 .cartItem a:hover {
-  color: var(--color1)
+  color: var(--color1);
 }
-
 
 .summDiv {
   border-radius: 5px;
@@ -60,7 +57,8 @@
   color: #9a9999;
 }
 
-.cart button  , .summary button{
+.cart button,
+.summary button {
   height: 45px;
   background-color: var(--color1);
   color: #fff;
@@ -68,28 +66,21 @@
   border-radius: 5px;
 }
 
-.cart button{
+.cart button {
   width: 200px;
   border-radius: 6px;
 }
 
-@media screen and (max-width:1025px) {
-  
-
-.cart {
-  width: 70%;
-}
-.summary {
-  width: 27%;
-  
-}
+@media screen and (max-width: 1025px) {
+  .cart {
+    width: 70%;
+  }
+  .summary {
+    width: 27%;
+  }
 }
 
-
-
-
-@media screen and (max-width:993px) {
-  
+@media screen and (max-width: 993px) {
   .cartItem h3 {
     font-size: 18px;
   }
@@ -99,12 +90,9 @@
   .summary {
     width: 80%;
   }
-  }
+}
 
-
-  
-@media screen and (max-width:900px) {
-  
+@media screen and (max-width: 900px) {
   .cartItem h3 {
     font-size: 18px;
   }
@@ -114,28 +102,19 @@
   .summary {
     width: 100%;
   }
-  }
+}
 
-
-  
-  
-@media screen and (max-width:770px) {
-  
+@media screen and (max-width: 770px) {
   .cartItem h3 {
     font-size: 16px;
   }
   .MyContainer h1 {
     font-size: 45px;
-  
   }
-  
-  }
+}
 
-  
-  
-@media screen and (max-width:577px) {
-  
-  .cartItem .borders{
+@media screen and (max-width: 577px) {
+  .cartItem .borders {
     border-left: 0 !important;
     border-top: 1px solid rgb(196, 200, 203) !important;
     padding-top: 10px;
@@ -143,25 +122,18 @@
   .cartItem img {
     width: 30%;
   }
-  
-  }
+}
 
-
-
-    
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .cartItem h3 {
     font-size: 18px;
   }
   .cartItem span {
     font-size: 15px;
   }
-  
-  }
+}
 
-  
-    
-@media screen and (max-width:430px) {
+@media screen and (max-width: 430px) {
   .cartItem h3 {
     font-size: 17px;
   }
@@ -173,16 +145,12 @@
   }
   .MyContainer h1 {
     font-size: 35px;
-  
   }
-  
+}
+
+@media screen and (max-width: 400px) {
+  .cart {
+    width: 100%;
+    padding: 30px;
   }
-
-
-  @media screen and (max-width:400px) {
-    .cart {
-      width: 100%;
-      padding: 30px;
-    }
-    
-    }
+}

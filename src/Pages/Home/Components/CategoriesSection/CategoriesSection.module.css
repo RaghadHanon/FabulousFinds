@@ -1,5 +1,4 @@
 .cards {
-
   padding: 160px 0px;
 }
 
@@ -21,23 +20,18 @@
   padding: 20px 50px;
 }
 
-.cards .linkStyle{
+.cards .linkStyle {
   text-decoration: none;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .cards {
-
     padding: 80px 0px;
   }
-
 }
 
-
-@media screen and (max-width:360px) {
+@media screen and (max-width: 360px) {
   .cards {
-
     padding: 60px 0px;
   }
-
 }

@@ -1,18 +1,22 @@
 .svgStyle {
   margin-top: 8%;
 }
+
 .titleStyle {
   font-size: 90px;
   text-align: center;
 }
+
 .spanStyle {
   font-size: 50px;
   text-align: center;
 }
+
 .pStyle {
   padding: 30px 0px;
   font-size: 25px;
 }
+
 .introTxt {
   padding: 100px 50px 0 0;
 }
@@ -21,14 +25,17 @@
   .titleStyle {
     font-size: 70px;
   }
+
   .pStyle {
     font-size: 22px;
   }
 }
+
 @media screen and (max-width: 1100px) {
   .titleStyle {
     font-size: 70px;
   }
+
   .introTxt {
     padding: 80px 0 0 0;
   }
@@ -40,34 +47,42 @@
     font-size: 18px;
   }
 }
+
 @media screen and (max-width: 900px) {
   .introTxt {
     padding: 40px 0 0 0;
   }
+
   .pStyle {
     padding: 0px 0px;
     font-size: 17px;
   }
 }
+
 @media screen and (max-width: 870px) {
   .introTxt {
     padding: 50px 0 0 0;
   }
 }
+
 @media screen and (max-width: 768px) {
   .titleStyle {
     font-size: 70px;
   }
+
   .spanStyle {
     font-size: 40px;
   }
+
   .introTxt {
     padding: 60px 0 0 0;
   }
+
   .pStyle {
     padding: 0px 0px;
     font-size: 16px;
   }
+
   .Home {
     background-color: var(--color1);
     padding: 0 0 65px 0;
@@ -79,6 +94,7 @@
     padding: 0px 10px;
     font-size: 14px;
   }
+
   .introTxt {
     padding: 40px 0 0 0;
   }
@@ -89,18 +105,22 @@
     font-size: 90px;
     text-align: center;
   }
+
   .spanStyle {
     font-size: 50px;
     text-align: center;
   }
+
   .pStyle {
     padding: 30px 0px;
     font-size: 18px;
     text-align: center;
   }
+
   .introTxt {
     padding: 55px 0px 0px;
   }
+
   .svgStyle {
     padding: 0px 65px;
     margin: 0;

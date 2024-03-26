@@ -1,5 +1,6 @@
-.box ,.reviewBox{
-  background: #FFF;
+.box,
+.reviewBox {
+  background: #fff;
   border-radius: 6px;
   margin: 5%;
 }
@@ -8,7 +9,6 @@
   padding: 5% 6%;
 }
 .card {
-
   padding: 0px 5%;
   overflow: hidden;
 }
@@ -26,8 +26,8 @@
   width: 80%;
 }
 
-.mainImg img{
-  width:100%;
+.mainImg img {
+  width: 100%;
   border: 1px solid rgb(215, 215, 215);
 }
 
@@ -35,25 +35,23 @@
   border: 0px;
 }
 
-
 .title {
   font-size: 33px;
 }
 
 .shopButton {
   background-color: var(--color1);
-  color: #FFF;
+  color: #fff;
   border: 0px;
   height: 60px;
   font-size: 20px;
   width: 60%;
-
 }
 
 .discount {
   width: 140px;
   height: 37px;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-size: 25px;
   padding: 3px 0;
@@ -62,32 +60,29 @@
   right: -15px;
 }
 
-.review{
-  border :1px solid rgba(99, 99, 99, 0.25);
+.review {
+  border: 1px solid rgba(99, 99, 99, 0.25);
   width: 100%;
 }
-.reviewImg{
+.reviewImg {
   width: 67px;
   height: 67px;
   border-radius: 50%;
-  border: 1px solid gainsboro
+  border: 1px solid gainsboro;
 }
 
-.comment{
+.comment {
   font-size: 18px;
   color: rgb(102, 102, 102);
   border-radius: 6px;
   background-color: rgb(250, 250, 250);
-
 }
 
-.comment:focus{
+.comment:focus {
   outline: 0px;
 }
 
-
-@media screen and (max-width:1200px) {
-
+@media screen and (max-width: 1200px) {
   .box {
     padding: 5% 2%;
   }
@@ -98,11 +93,7 @@
   }
 }
 
-
-
-
-@media screen and (max-width:1000px) {
-
+@media screen and (max-width: 1000px) {
   .box {
     padding: 6% 10%;
   }
@@ -113,17 +104,13 @@
   }
 }
 
-
-
-@media screen and (max-width:985px) {
-
+@media screen and (max-width: 985px) {
   .card {
     padding: 0;
   }
 }
 
-@media screen and (max-width:833px) {
-
+@media screen and (max-width: 833px) {
   .imgContainer {
     width: 25%;
   }
@@ -131,10 +118,9 @@
   .mainImg {
     width: 75%;
   }
-
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .discount {
     top: 20px;
     right: -25px;
@@ -148,49 +134,42 @@
   .mainImg {
     width: 70%;
   }
-
 }
 
-
-@media screen and (max-width:576px) {
-
+@media screen and (max-width: 576px) {
   .box {
-    padding: 4% ;
+    padding: 4%;
     margin-left: 0;
     margin-right: 0;
   }
-  .reviewBox{
-    
+  .reviewBox {
     margin-left: 0;
     margin-right: 0;
   }
 
   .shopButton {
     width: 100%;
-
   }
 
   .title {
     font-size: 27px;
   }
-  
-.imgContainer {
-  width: 100%;
-}
 
-.imgStyle {
-  width: 100%;
-  border: 1px solid rgb(215, 215, 215);
-}
+  .imgContainer {
+    width: 100%;
+  }
 
-.mainImg {
-  width: 100%;
-}
+  .imgStyle {
+    width: 100%;
+    border: 1px solid rgb(215, 215, 215);
+  }
 
-.mainImg img{
-  width:100%;
-  border: 1px solid rgb(215, 215, 215);
-}
+  .mainImg {
+    width: 100%;
+  }
 
-
+  .mainImg img {
+    width: 100%;
+    border: 1px solid rgb(215, 215, 215);
+  }
 }

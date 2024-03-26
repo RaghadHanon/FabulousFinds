@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './Loader.module.css'
-import whiteLogo from '../../public/images/logo/whiteLogo2.png'
 
 function Loader() {
   return (

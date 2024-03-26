@@ -2,7 +2,7 @@
   width: 60px;
 }
 
-.dropdownItem{
+.dropdownItem {
   text-decoration: none;
   color: var(--color1);
   text-align: center;
@@ -22,14 +22,14 @@
   box-shadow: 0px 0px 3px var(--color4) !important;
 }
 
-.userImage{
+.userImage {
   width: 28px;
   height: 28px;
   border-radius: 50%;
 }
-.cartCount{
-  top:-7px;
-  right:4px;
+.cartCount {
+  top: -7px;
+  right: 4px;
   background-color: var(--color4);
   width: 17px;
   height: 17px;
