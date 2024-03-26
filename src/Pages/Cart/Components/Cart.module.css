@@ -28,12 +28,28 @@
   border: 1px solid #d0d0d0;
 }
 
+
 .cartItem img {
   width: 20%;
 }
 .cartItem h3 {
   font-size: 20px;
 }
+
+.cursorPointer , .cartItem i{
+  cursor: pointer;
+}
+
+
+.cartItem a {
+  color: rgb(148, 148, 148);
+}
+
+
+.cartItem a:hover {
+  color: var(--color1)
+}
+
 
 .summDiv {
   border-radius: 5px;

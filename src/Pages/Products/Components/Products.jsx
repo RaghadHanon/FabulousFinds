@@ -11,10 +11,18 @@ function Products() {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [pageNum, setPageNum] = useState(1);
+  const [filter, setFilter] = useState({
+    search: '',
+    sort: '',
+    maxvalue: '',
+    minvalue: '',
+  });
+  const [display, setDisplay] = useState(false);
 
   const getData = async () => {
+    setLoader(true);
     try {
-      const { data } = await axios.get(`https://ecommerce-node4.vercel.app/products?page=${page}&limit=3`);
+      const { data } = await axios.get(`https://ecommerce-node4.vercel.app/products?page=${page}&limit=3&search=${filter.search}&sort=${filter.sort} `);  //&maxvalue=${filter.maxvalue}&minvalue=${filter.minvalue}`);
       setError('');
       setProducts(data.products);
       setPageNum(Math.ceil(data.total / 3));
@@ -30,19 +38,39 @@ function Products() {
     getData();
   }, [page]);
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setFilter({
+      ...filter,
+      [name]: value,
+    });
+
+  }
+
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+    getData();
+    setDisplay(false);
+
+  }
   if (loader)
     return <Loader />
 
 
   return (
 
-    <>
+    <div className={`position-relative`}>
       {error ?? <p>{error}</p>}
       <div className={`${style.products} position-relative d-flex flex-column justify-content-center align-items-center `}>
         <div className={`container`}>
           <div>
             <div className={` position-relative d-flex flex-column justify-content-between   ${style.box}`}>
-              <h1 className={`py-2 px-3  DancingScriptFont color1 ${style.category}`}>Products</h1>
+              <div className={`d-flex flex-wrap justify-content-between align-items-center border-bottom gap-2 row-gap-2`}>
+              <h1 className={`py-2 px-3  DancingScriptFont color1 ${style.category} `}>Products</h1>
+              <i onClick={()=> setDisplay(true)} className="fa-lg fa-solid fa-arrow-down-wide-short pe-3" style={{color: "#67729d"}}></i>
+              </div>
 
               <div className={`${style.cards} d-flex justify-content-start gap-3 pt-4 flex-wrap align-items-stretch row-gap-4  position-absolute`}>
                 {
@@ -129,7 +157,49 @@ function Products() {
         </div>
       </div>
 
-    </>
+
+      {display ?
+        <div  className={` ${style.filterNav} position-absolute top-0 `}>
+          <form onSubmit={handleSubmit} className={` d-flex flex-column gap-4 bgcolor1 p-4 position-absolute top-0 `}>
+            <div className={`text-end`}>
+              <i onClick={() => setDisplay(false)}
+                className={`fa-solid fa-xmark fa-xl`}
+                style={{ color: "#FED9ED" }}
+              ></i>
+            </div>
+            <input type='text' name='search' placeholder='Sraerch' value={filter.search} onChange={handleChange}></input>
+
+            <div className={` d-flex flex-column gap-1`}>
+
+              <label className={`color4 CrimsonTextFont fw-semibold`} >Sort by</label>
+              <select className={`color1  `} value={filter.sort} name='sort' onChange={handleChange}>
+                <option value="">Default</option>
+                <option value="price">Price: Low to High</option>
+                <option value="-price">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+                <option value="-name">Name: Z to A</option>
+                <option value="discount">Discount: Low to High</option>
+                <option value="-discount">Discount: High to Low</option>
+              </select>
+            </div>
+            <div className={` d-flex flex-column gap-1`}>
+
+              <label className={`color4 CrimsonTextFont fw-semibold`} >Max price</label>
+              <input className={`color1 `} type='text' name='maxvalue' value={filter.maxvalue} placeholder='0.00$' onChange={handleChange}></input>
+            </div>
+            <div className={` d-flex flex-column gap-1`}>
+
+              <label className={`color4 CrimsonTextFont fw-semibold`}>Min price</label>
+              <input className={`color1  `} type='text' name='minvalue' value={filter.minvalue} placeholder='0.00$' onChange={handleChange}></input>
+            </div>
+            <input className={`color1 bgcolor4 border-0 CrimsonTextFont fw-bolder mt-5`} type='submit' value='Filter'></input>
+          </form>
+          <div onClick={() => setDisplay(false)} className={`w-100 h-100`}> </div>
+
+        </div> : <></>
+      }
+
+    </div>
 
 
   )

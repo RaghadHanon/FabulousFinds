@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import style from './CreateOrder.module.css'
 import axios from 'axios';
 import { Bounce,toast } from 'react-toastify';
 import { NavLink, useNavigate } from 'react-router-dom'
-
-
+import {CartContext} from '../../../Context/CartContext'
 function CreateOrder() {
+
+  const {setCartItemsCount} = useContext(CartContext);
   const navigate = useNavigate();
   const [loader,setLoader]=useState(false);
   const [order, setOrder] = useState({
@@ -41,6 +42,7 @@ function CreateOrder() {
         theme: "light",
         transition: Bounce,
         });
+        setCartItemsCount(0);
       navigate('/Profile/Orders')
     }
     catch(error){

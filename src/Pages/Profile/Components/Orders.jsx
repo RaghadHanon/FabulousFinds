@@ -83,7 +83,7 @@ function Orders() {
             {order.products.length > 0 ?
               <div className={`border border-2 rounded-1 bgwhiteC  border-secondary-subtle p-4 d-flex  justify-content-lg-between align-items-lg-start align-items-center gap-4 row-gap-5 flex-lg-row flex-column  `}>
 
-                <div key={order._Id} className={`${style.order} d-flex flex-column gap-4`}>
+                <div key={order._Id} className={`${style.order} d-flex flex-column gap-4 `}>
                   {order.products.map((product) => (
                     <div key={product.productId._id} className={`d-flex flex-sm-row flex-column row-gap-3 justify-content-between   p-md-4 p-3 ${style.cartItem}`}>
                       <div className={`d-flex justify-content-start align-self-stretch gap-3 col-xl-8 col-sm-7 col-12 `}>
@@ -92,8 +92,11 @@ function Orders() {
                           alt={product.productId.name}
                         />
                         <div className={`d-flex flex-column justify-content-between`}>
-                          <h3 className={`CrimsonTextFont color1 text-capitalize fw-semibold`}>{product.productId.name}</h3>
+                            <h3 className={`CrimsonTextFont color1 text-capitalize fw-semibold`}>{product.productId.name}</h3>
 
+                           
+                          <NavLink to={`/Products/${product.productId._id}`} className={`text-decoration-none CrimsonTextFont `}>View product
+                            </NavLink>
                         </div>
                       </div>
                       <div className={`${style.borders} d-flex align-self-stretch gap-3 col-xl-3 col-sm-4  ps-3 border-start  border-secondary-subtle`}>
@@ -151,7 +154,7 @@ function Orders() {
                       <span>{order.status}</span>
                     </div>
                   </div>
-                  {order.status == "cancelled" ? <></> :
+                  {order.status != "pending" ? <></> :
                     <button onClick={() => cancelOrder(order._id)} className={`CrimsonTextFont  fw-semibold w-100 mt-5`} >Cancel Order</button>}
                 </div>
               </div>

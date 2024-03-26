@@ -20,6 +20,15 @@
   border: 1px solid #d0d0d0;
 }
 
+.cartItem a {
+  color: rgb(148, 148, 148);
+}
+
+
+.cartItem a:hover {
+  color: var(--color1)
+}
+
 .cartItem img {
   width: 20%;
 }
@@ -43,6 +52,7 @@
   border: 0px;
   border-radius: 0px;
 }
+
 
 
 

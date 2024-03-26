@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./NavBar.module.css";
 import logo from "../../public/images/logo/logo1c.png";
@@ -9,8 +9,6 @@ function NavBar() {
   const { User, loggedIn, setLoggedIn, setUserToken } = useContext(UserContext);
   const { CartItemsCount } = useContext(CartContext);
 
-
-  console.log(CartItemsCount);
   const logOut = () => {
     localStorage.removeItem("userToken");
     setUserToken(null);
@@ -38,7 +36,9 @@ function NavBar() {
         </button>
         <div className="collapse navbar-collapse m-2" id="navbarNav">
           <ul className="navbar-nav flex-grow-1 gap-2">
-            <li className="nav-item">
+            <li className="nav-item" 
+               >
+              
               <NavLink
                 className={`nav-link fs-6 crushedFont color4 letterSpace`}
                 to="/"
@@ -46,7 +46,8 @@ function NavBar() {
                 HOME
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" >
+              
               <NavLink
                 className={`nav-link fs-6 crushedFont  color4 letterSpace`}
                 to="/Products"
@@ -62,12 +63,12 @@ function NavBar() {
                 CATEGORIES
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" >
               <NavLink
                 className={`nav-link fs-6 crushedFont  color4 letterSpace d-flex gap-2`}
                 to="/Cart"
               >
-                <div className={`position-relative top-0`}>
+                <div className={`position-relative top-0`} >
                 <svg
                   className={`me-3 ${style.cartIcon}  `}
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +90,7 @@ function NavBar() {
             </li>
           </ul>
 
-          <ul className="navbar-nav  align-self-end gap-2">
+          <ul className="navbar-nav  align-self-end gap-2" >
             {loggedIn ? (
               <li className="nav-item dropdown d-flex mt-sm-1 justify-content-start gap-2 align-items-sm-center">
                 <img
@@ -106,7 +107,7 @@ function NavBar() {
                   {User.userName}
                 </a>
                 <ul className="dropdown-menu bgcolor1 border-0  ">
-                  <li className={`${style.dropdownItem}`}>
+                  <li className={`${style.dropdownItem}`} >
                     <NavLink
                       className={`${style.dropdownItem} color4  fs-6  crushedFont   letterSpace`}
                       to="/Profile/Orders"
