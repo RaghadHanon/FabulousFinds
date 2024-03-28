@@ -14,7 +14,7 @@ function Products() {
   const [filter, setFilter] = useState({
     search: "",
     sort: "",
-    maxvalue: "",
+    maxvalue: '',
     minvalue: "",
   });
   const [display, setDisplay] = useState(false);
@@ -23,10 +23,8 @@ function Products() {
     setLoader(true);
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_API}/products?page=${page}&limit=3&search=${
-          filter.search
-        }&sort=${filter.sort}`)
-        //&price[lte]=${filter.maxvalue}&price[gte]=${filter.minvalue}`);
+        `${import.meta.env.VITE_API}/products?page=${page}&limit=3&search=${filter.search}&sort=${
+          filter.sort}&price[lte]=${filter.maxvalue==''?1000000000:filter.maxvalue}&price[gte]=${filter.minvalue==''?0:filter.minvalue}`);
       setError("");
       setProducts(data.products);
       setPageNum(Math.ceil(data.total / 3));
