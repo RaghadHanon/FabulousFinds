@@ -51,6 +51,12 @@ function Products() {
     e.preventDefault();
     getData();
     setDisplay(false);
+    setFilter({
+      search: "",
+      sort: "",
+      maxvalue: "",
+      minvalue: "",
+    });
   };
   if (loader) return <Loader />;
 
