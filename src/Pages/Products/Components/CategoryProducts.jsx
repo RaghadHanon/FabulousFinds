@@ -24,7 +24,7 @@ function CategoryProducts() {
   const getData = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_API}/products?page=${page}&limit=3&search=${filter.search}&sort=${
+        `${import.meta.env.VITE_API}/products/category/${id}?page=${page}&limit=3&search=${filter.search}&sort=${
           filter.sort}&price[lte]=${filter.maxvalue==''?1000000000:filter.maxvalue}&price[gte]=${filter.minvalue==''?0:filter.minvalue}`);
       setError("");
       setProducts(data.products);
