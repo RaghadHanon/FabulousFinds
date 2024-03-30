@@ -24,7 +24,7 @@ function Product() {
   const getData = async () => {
     try {
       const { data } = await axios.get(
-        `https://ecommerce-node4.vercel.app/products/${id}`
+        `${import.meta.env.VITE_API}/products/${id}`
       );
 
       setProduct(data.product);
