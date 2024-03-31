@@ -55,7 +55,7 @@ function Product() {
       const token = localStorage.getItem("userToken");
       try {
         const { data } = await axios.post(
-          `https://ecommerce-node4.vercel.app/cart`,
+          `${import.meta.env.VITE_API}/cart`,
           {
             productId, //saame as productId = productId, becouse name is the same
           },
