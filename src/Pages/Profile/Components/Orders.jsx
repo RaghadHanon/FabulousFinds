@@ -80,11 +80,65 @@ function Orders() {
           <>
             {order.products.length > 0 ? (
               <div
-                className={`border border-2 rounded-1 bgwhiteC  border-secondary-subtle p-sm-4 p-1 d-flex  justify-content-lg-between align-items-lg-start align-items-center gap-4 row-gap-5 flex-lg-row flex-column  `}
+                className={`border border-2 rounded-1 bgwhiteC  border-secondary-subtle  d-flex  justify-content-lg-between align-items-lg-start align-items-center  flex-lg-row flex-column  `}
               >
                 <div
+                  className={` ${style.summary}  col-lg-4 p-4 align-self-stretch  d-flex justify-content-between flex-column gap-3`}
+                >
+                  <div className={` d-flex flex-column gap-2  rounded-1 `}>
+                    <div
+                      className={`fs-4 p-2 mb-4 border-bottom  color1 row-gap-2 d-flex flex-wrap justify-content-between gap-3 align-items-center px-1 CrimsonTextFont fw-bolder `}
+                    >
+                      <span>{order.status}</span>
+                      <span>$ {Math.round(order.finalPrice)}</span>
+
+                    </div>
+
+
+
+                    {order.couponName != "" ? (
+                      <div
+                        className={`p-2  color1 row-gap-2 d-flex flex-wrap justify-content-start gap-3 align-items-center px-1 CrimsonTextFont fw-bolder `}
+                      >
+                        <span>Coupon Name :</span>
+                        <span>{order.couponName}</span>
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                    <div
+                      className={`p-2  color1 row-gap-2 d-flex flex-wrap justify-content-start gap-3 align-items-center px-1 CrimsonTextFont fw-bolder `}
+                    >
+                      <span>Payment Type :</span>
+                      <span>{order.paymentType}</span>
+                    </div>
+                    <div
+                      className={`p-2  color1 row-gap-2 d-flex flex-wrap justify-content-start gap-3 align-items-center px-1 CrimsonTextFont fw-bolder`}
+                    >
+                      <span>Phone Number :</span>
+                      <span>{order.phoneNumber}</span>
+                    </div>
+                    <div
+                      className={`p-2  color1 row-gap-2 d-flex flex-wrap justify-content-start gap-3 align-items-center px-1 CrimsonTextFont fw-bolder`}
+                    >
+                      <span>Address :</span>
+                      <span>{order.address}</span>
+                    </div>
+                  </div>
+                  {order.status != "pending" ? (
+                    <></>
+                  ) : (
+                    <button
+                      onClick={() => cancelOrder(order._id)}
+                      className={`CrimsonTextFont  fw-semibold w-100 mt-5`}
+                    >
+                      Cancel Order
+                    </button>
+                  )}
+                </div>
+                <div
                   key={order._Id}
-                  className={`${style.order} d-flex flex-column gap-sm-4 gap-1`}
+                  className={`${style.order} d-flex flex-column `}
                 >
                   {order.products.map((product) => (
                     <div
@@ -169,62 +223,7 @@ function Orders() {
                   ))}
                 </div>
 
-                <div
-                  className={` ${style.summary}  col-lg-4 p-4 align-self-stretch  d-flex justify-content-between flex-column gap-3`}
-                >
-                  <div className={` d-flex flex-column gap-4`}>
-                    <div
-                      className={`border-bottom  p-2  color1 row-gap-2 d-flex flex-wrap justify-content-between align-items-center CrimsonTextFont fw-bolder`}
-                    >
-                      <span>Total</span>
-                      <span>$ {Math.round(order.finalPrice)}</span>
-                    </div>
-                    <div
-                      className={`border-bottom  p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder`}
-                    >
-                      <span>Address :</span>
-                      <span>{order.address}</span>
-                    </div>
-                    <div
-                      className={`border-bottom   p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder`}
-                    >
-                      <span>Phone Number :</span>
-                      <span>{order.phoneNumber}</span>
-                    </div>
-                    {order.couponName != "" ? (
-                      <div
-                        className={` border p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}
-                      >
-                        <span>Coupon Name :</span>
-                        <span>{order.couponName}</span>
-                      </div>
-                    ) : (
-                      <></>
-                    )}
-                    <div
-                      className={`border-bottom  p-2 color1  row-gap-2  d-flex  flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}
-                    >
-                      <span>Payment Type :</span>
-                      <span>{order.paymentType}</span>
-                    </div>
-                    <div
-                      className={`border-bottom  p-2 color1  row-gap-2  d-flex flex-wrap justify-content-between align-items-center px-1 CrimsonTextFont fw-bolder `}
-                    >
-                      <span>Status :</span>
-                      <span>{order.status}</span>
-                    </div>
-                  </div>
-                  {order.status != "pending" ? (
-                    <></>
-                  ) : (
-                    <button
-                      onClick={() => cancelOrder(order._id)}
-                      className={`CrimsonTextFont  fw-semibold w-100 mt-5`}
-                    >
-                      Cancel Order
-                    </button>
-                  )}
-                </div>
+
               </div>
             ) : (
               <></>
