@@ -45,7 +45,7 @@ function CategoriesSection() {
   }, []);
 
   let indx = 0;
-  const categoriesImg = [cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9];
+  const categoriesImg = [cat3, cat2, cat8, cat5, cat4, cat9, cat1, cat6, cat7];
 
   if (loader) {
     return <Loader />;
