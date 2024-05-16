@@ -1,5 +1,5 @@
 # Fabulous Finds
-<h6>eCommerse project</h1>
+<h6>eCommerce project</h1>
 <span>My first React Project</span>
 <br/>
 <a href="https://fabulousfinds.onrender.com" target="_blank">Fabulous Finds </a>
